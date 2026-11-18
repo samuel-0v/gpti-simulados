@@ -1,0 +1,3532 @@
+[
+  {
+    "id": "1",
+    "title": "Gerenciamento de Custos de Projetos",
+    "questions": [
+      {
+        "id": "1-1",
+        "number": 1,
+        "text": "O gerenciamento de custos em projetos tem como principal objetivo:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Reduzir todos os gastos do projeto."
+          },
+          {
+            "key": "B",
+            "text": "Garantir que o projeto seja concluído dentro do orçamento aprovado."
+          },
+          {
+            "key": "C",
+            "text": "Eliminar desperdícios operacionais."
+          },
+          {
+            "key": "D",
+            "text": "Maximizar o lucro do fornecedor."
+          },
+          {
+            "key": "E",
+            "text": "Controlar apenas os custos indiretos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-2",
+        "number": 2,
+        "text": "Qual é o primeiro processo do gerenciamento de custos segundo o PMBOK?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Controlar os custos"
+          },
+          {
+            "key": "B",
+            "text": "Determinar o orçamento"
+          },
+          {
+            "key": "C",
+            "text": "Planejar o gerenciamento dos custos"
+          },
+          {
+            "key": "D",
+            "text": "Estimar os custos"
+          },
+          {
+            "key": "E",
+            "text": "Analisar o valor agregado"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-3",
+        "number": 3,
+        "text": "O processo Planejar o gerenciamento dos custos tem como principal saída:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Linha de base dos custos"
+          },
+          {
+            "key": "B",
+            "text": "Estimativas de custos"
+          },
+          {
+            "key": "C",
+            "text": "Plano de gerenciamento dos custos"
+          },
+          {
+            "key": "D",
+            "text": "Relatório de desempenho"
+          },
+          {
+            "key": "E",
+            "text": "Registro de riscos"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-4",
+        "number": 4,
+        "text": "O processo Estimar os custos consiste em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Consolidar os custos para formar o orçamento."
+          },
+          {
+            "key": "B",
+            "text": "Desenvolver uma aproximação dos recursos financeiros necessários."
+          },
+          {
+            "key": "C",
+            "text": "Controlar variações do orçamento."
+          },
+          {
+            "key": "D",
+            "text": "Aprovar mudanças no orçamento."
+          },
+          {
+            "key": "E",
+            "text": "Criar o termo de abertura."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-5",
+        "number": 5,
+        "text": "O processo Determinar o orçamento resulta em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estimativas de custos individuais."
+          },
+          {
+            "key": "B",
+            "text": "Linha de base do desempenho de custos."
+          },
+          {
+            "key": "C",
+            "text": "Registro das partes interessadas."
+          },
+          {
+            "key": "D",
+            "text": "Solicitações de mudança."
+          },
+          {
+            "key": "E",
+            "text": "Plano de comunicação."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-6",
+        "number": 6,
+        "text": "Qual processo pertence ao grupo de Monitoramento e Controle no gerenciamento de custos?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Planejar os custos"
+          },
+          {
+            "key": "B",
+            "text": "Estimar os custos"
+          },
+          {
+            "key": "C",
+            "text": "Determinar o orçamento"
+          },
+          {
+            "key": "D",
+            "text": "Controlar os custos"
+          },
+          {
+            "key": "E",
+            "text": "Desenvolver a EAP"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "1-7",
+        "number": 7,
+        "text": "A linha de base dos custos é usada para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estimar riscos financeiros."
+          },
+          {
+            "key": "B",
+            "text": "Medir o desempenho do projeto em relação ao orçamento aprovado."
+          },
+          {
+            "key": "C",
+            "text": "Criar contratos com fornecedores."
+          },
+          {
+            "key": "D",
+            "text": "Definir premissas do projeto."
+          },
+          {
+            "key": "E",
+            "text": "Estabelecer critérios de qualidade."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-8",
+        "number": 8,
+        "text": "A técnica de estimativa análoga é baseada em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Cálculo estatístico detalhado."
+          },
+          {
+            "key": "B",
+            "text": "Modelagem matemática avançada."
+          },
+          {
+            "key": "C",
+            "text": "Projetos similares realizados anteriormente."
+          },
+          {
+            "key": "D",
+            "text": "Opinião exclusiva do patrocinador."
+          },
+          {
+            "key": "E",
+            "text": "Dados não históricos."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-9",
+        "number": 9,
+        "text": "A estimativa paramétrica utiliza:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Opinião especializada apenas."
+          },
+          {
+            "key": "B",
+            "text": "Relação estatística entre dados históricos e outras variáveis."
+          },
+          {
+            "key": "C",
+            "text": "Apenas julgamento do gerente."
+          },
+          {
+            "key": "D",
+            "text": "Brainstorming com a equipe."
+          },
+          {
+            "key": "E",
+            "text": "Matriz SWOT."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-10",
+        "number": 10,
+        "text": "A estimativa bottom-up é caracterizada por:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ser rápida e pouco detalhada."
+          },
+          {
+            "key": "B",
+            "text": "Basear-se em projetos anteriores."
+          },
+          {
+            "key": "C",
+            "text": "Estimar custos detalhadamente para cada pacote de trabalho."
+          },
+          {
+            "key": "D",
+            "text": "Ser usada apenas em iniciação."
+          },
+          {
+            "key": "E",
+            "text": "Não exigir EAP."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-11",
+        "number": 11,
+        "text": "A técnica de reserva de contingência é utilizada para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Cobrir riscos identificados."
+          },
+          {
+            "key": "B",
+            "text": "Cobrir mudanças estratégicas organizacionais."
+          },
+          {
+            "key": "C",
+            "text": "Aumentar o lucro do fornecedor."
+          },
+          {
+            "key": "D",
+            "text": "Eliminar variações de escopo."
+          },
+          {
+            "key": "E",
+            "text": "Substituir o controle de mudanças."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "1-12",
+        "number": 12,
+        "text": "A reserva gerencial é destinada a:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Custos fixos."
+          },
+          {
+            "key": "B",
+            "text": "Custos variáveis."
+          },
+          {
+            "key": "C",
+            "text": "Riscos desconhecidos (unknown unknowns)."
+          },
+          {
+            "key": "D",
+            "text": "Despesas administrativas."
+          },
+          {
+            "key": "E",
+            "text": "Pagamentos a fornecedores."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-13",
+        "number": 13,
+        "text": "O método do Valor Agregado (EVM) integra quais três dimensões principais?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Escopo, prazo e qualidade"
+          },
+          {
+            "key": "B",
+            "text": "Escopo, custo e prazo"
+          },
+          {
+            "key": "C",
+            "text": "Custo, risco e qualidade"
+          },
+          {
+            "key": "D",
+            "text": "Prazo, risco e recursos"
+          },
+          {
+            "key": "E",
+            "text": "Escopo, comunicação e risco"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-14",
+        "number": 14,
+        "text": "No EVM, o CPI (Cost Performance Index) é calculado por:",
+        "options": [
+          {
+            "key": "A",
+            "text": "EV / AC"
+          },
+          {
+            "key": "B",
+            "text": "AC / EV"
+          },
+          {
+            "key": "C",
+            "text": "PV / EV"
+          },
+          {
+            "key": "D",
+            "text": "EV / PV"
+          },
+          {
+            "key": "E",
+            "text": "BAC / EV"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "1-15",
+        "number": 15,
+        "text": "Se o CPI (Cost Performance Index) for menor que 1, isso indica que:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O projeto está abaixo do orçamento."
+          },
+          {
+            "key": "B",
+            "text": "O projeto está acima do orçamento."
+          },
+          {
+            "key": "C",
+            "text": "O projeto está adiantado."
+          },
+          {
+            "key": "D",
+            "text": "O cronograma está atrasado."
+          },
+          {
+            "key": "E",
+            "text": "Não há variação de custos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-16",
+        "number": 16,
+        "text": "O SPI (Schedule Performance Index) mede:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Desempenho de qualidade."
+          },
+          {
+            "key": "B",
+            "text": "Desempenho de custos."
+          },
+          {
+            "key": "C",
+            "text": "Desempenho do cronograma."
+          },
+          {
+            "key": "D",
+            "text": "Satisfação do cliente."
+          },
+          {
+            "key": "E",
+            "text": "Produtividade da equipe."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-17",
+        "number": 17,
+        "text": "A variação de custos (CV) é calculada por:",
+        "options": [
+          {
+            "key": "A",
+            "text": "PV – EV"
+          },
+          {
+            "key": "B",
+            "text": "EV – AC"
+          },
+          {
+            "key": "C",
+            "text": "AC – EV"
+          },
+          {
+            "key": "D",
+            "text": "EV – PV"
+          },
+          {
+            "key": "E",
+            "text": "BAC – EV"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-18",
+        "number": 18,
+        "text": "Se EV = 100.000 e AC = 120.000, o projeto está:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Dentro do orçamento."
+          },
+          {
+            "key": "B",
+            "text": "Com economia de custos."
+          },
+          {
+            "key": "C",
+            "text": "Acima do orçamento."
+          },
+          {
+            "key": "D",
+            "text": "Adiantado no cronograma."
+          },
+          {
+            "key": "E",
+            "text": "Sem variação."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-19",
+        "number": 19,
+        "text": "O BAC (Budget at Completion) representa:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O custo real até a data."
+          },
+          {
+            "key": "B",
+            "text": "O valor agregado atual."
+          },
+          {
+            "key": "C",
+            "text": "O orçamento total aprovado para o projeto."
+          },
+          {
+            "key": "D",
+            "text": "O custo previsto para terminar o projeto."
+          },
+          {
+            "key": "E",
+            "text": "A reserva gerencial."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "1-20",
+        "number": 20,
+        "text": "O EAC (Estimate at Completion) representa:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O custo original aprovado."
+          },
+          {
+            "key": "B",
+            "text": "O custo estimado para concluir o projeto com base no desempenho atual."
+          },
+          {
+            "key": "C",
+            "text": "A variação de custo acumulada."
+          },
+          {
+            "key": "D",
+            "text": "O custo planejado até a data."
+          },
+          {
+            "key": "E",
+            "text": "A reserva de contingência."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-21",
+        "number": 21,
+        "text": "Qual é uma entrada do processo Controlar os custos?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Linha de base dos custos"
+          },
+          {
+            "key": "B",
+            "text": "Termo de abertura"
+          },
+          {
+            "key": "C",
+            "text": "Registro de partes interessadas"
+          },
+          {
+            "key": "D",
+            "text": "Plano de qualidade"
+          },
+          {
+            "key": "E",
+            "text": "Matriz RACI"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "1-22",
+        "number": 22,
+        "text": "Uma das principais saídas do processo Controlar os custos é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Solicitações de mudança"
+          },
+          {
+            "key": "B",
+            "text": "EAP"
+          },
+          {
+            "key": "C",
+            "text": "Plano de comunicação"
+          },
+          {
+            "key": "D",
+            "text": "Registro de premissas"
+          },
+          {
+            "key": "E",
+            "text": "Termo de encerramento"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "1-23",
+        "number": 23,
+        "text": "A técnica de análise de tendências é utilizada para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Avaliar o desempenho passado e prever resultados futuros."
+          },
+          {
+            "key": "B",
+            "text": "Criar a linha de base do escopo."
+          },
+          {
+            "key": "C",
+            "text": "Definir requisitos de qualidade."
+          },
+          {
+            "key": "D",
+            "text": "Identificar partes interessadas."
+          },
+          {
+            "key": "E",
+            "text": "Estimar riscos qualitativos."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "1-24",
+        "number": 24,
+        "text": "Custos diretos são:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Custos administrativos gerais."
+          },
+          {
+            "key": "B",
+            "text": "Custos que podem ser diretamente atribuídos ao projeto."
+          },
+          {
+            "key": "C",
+            "text": "Custos de energia elétrica da empresa."
+          },
+          {
+            "key": "D",
+            "text": "Custos de manutenção predial."
+          },
+          {
+            "key": "E",
+            "text": "Custos compartilhados entre vários projetos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "1-25",
+        "number": 25,
+        "text": "Se o SPI for maior que 1, o projeto está:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Atrasado."
+          },
+          {
+            "key": "B",
+            "text": "Dentro do orçamento."
+          },
+          {
+            "key": "C",
+            "text": "Adiantado em relação ao cronograma."
+          },
+          {
+            "key": "D",
+            "text": "Acima do orçamento."
+          },
+          {
+            "key": "E",
+            "text": "Com baixa qualidade."
+          }
+        ],
+        "answer": "c"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Gerenciamento de Riscos de Projetos",
+    "questions": [
+      {
+        "id": "2-1",
+        "number": 1,
+        "text": "O processo de planejamento do gerenciamento dos riscos tem como principal objetivo:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Identificar todos os riscos possíveis do projeto."
+          },
+          {
+            "key": "B",
+            "text": "Definir como as atividades de gerenciamento de riscos serão conduzidas."
+          },
+          {
+            "key": "C",
+            "text": "Estabelecer os custos para mitigar riscos."
+          },
+          {
+            "key": "D",
+            "text": "Criar planos de resposta para cada risco identificado."
+          },
+          {
+            "key": "E",
+            "text": "Cancelar riscos que não podem ser mitigados."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-2",
+        "number": 2,
+        "text": "Qual dos itens abaixo não é uma técnica de identificação de riscos?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Brainstorming"
+          },
+          {
+            "key": "B",
+            "text": "Análise SWOT"
+          },
+          {
+            "key": "C",
+            "text": "Técnica Delphi"
+          },
+          {
+            "key": "D",
+            "text": "Diagrama de Ishikawa"
+          },
+          {
+            "key": "E",
+            "text": "Método do Valor Agregado"
+          }
+        ],
+        "answer": "e"
+      },
+      {
+        "id": "2-3",
+        "number": 3,
+        "text": "O registro de riscos (risk register) é um documento que:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Contém apenas os riscos críticos do projeto."
+          },
+          {
+            "key": "B",
+            "text": "Define a política de riscos da organização."
+          },
+          {
+            "key": "C",
+            "text": "Lista riscos identificados, suas características e respostas planejadas."
+          },
+          {
+            "key": "D",
+            "text": "Substitui o termo de abertura do projeto."
+          },
+          {
+            "key": "E",
+            "text": "É usado apenas na fase de encerramento do projeto."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-4",
+        "number": 4,
+        "text": "Qual das opções é uma resposta a riscos negativos (ameaças)?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Explorar"
+          },
+          {
+            "key": "B",
+            "text": "Compartilhar"
+          },
+          {
+            "key": "C",
+            "text": "Transferir"
+          },
+          {
+            "key": "D",
+            "text": "Melhorar"
+          },
+          {
+            "key": "E",
+            "text": "Aproveitar"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-5",
+        "number": 5,
+        "text": "Qual das alternativas corresponde a uma resposta a riscos positivos (oportunidades)?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Evitar"
+          },
+          {
+            "key": "B",
+            "text": "Transferir"
+          },
+          {
+            "key": "C",
+            "text": "Mitigar"
+          },
+          {
+            "key": "D",
+            "text": "Explorar"
+          },
+          {
+            "key": "E",
+            "text": "Aceitar passivamente"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "2-6",
+        "number": 6,
+        "text": "Na análise qualitativa de riscos, o objetivo principal é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Quantificar monetariamente o impacto dos riscos."
+          },
+          {
+            "key": "B",
+            "text": "Desenvolver respostas específicas para cada risco."
+          },
+          {
+            "key": "C",
+            "text": "Priorizar riscos para análise ou ação adicional."
+          },
+          {
+            "key": "D",
+            "text": "Garantir que todos os riscos sejam eliminados."
+          },
+          {
+            "key": "E",
+            "text": "Elaborar o plano de gerenciamento de custos."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-7",
+        "number": 7,
+        "text": "A técnica de análise de Monte Carlo é usada em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Análise qualitativa."
+          },
+          {
+            "key": "B",
+            "text": "Análise quantitativa."
+          },
+          {
+            "key": "C",
+            "text": "Identificação de riscos."
+          },
+          {
+            "key": "D",
+            "text": "Monitoramento de riscos."
+          },
+          {
+            "key": "E",
+            "text": "Planejamento do escopo."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-8",
+        "number": 8,
+        "text": "Um gerente de projetos decide reduzir a probabilidade de ocorrência de um risco. Essa estratégia é chamada de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Transferência"
+          },
+          {
+            "key": "B",
+            "text": "Aceitação"
+          },
+          {
+            "key": "C",
+            "text": "Mitigação"
+          },
+          {
+            "key": "D",
+            "text": "Exploração"
+          },
+          {
+            "key": "E",
+            "text": "Evitação"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-9",
+        "number": 9,
+        "text": "Durante o projeto, um risco identificado acontece. O gerente deve:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ignorar, já que foi previamente identificado."
+          },
+          {
+            "key": "B",
+            "text": "Acionar a resposta planejada no registro de riscos."
+          },
+          {
+            "key": "C",
+            "text": "Criar um novo plano de projeto."
+          },
+          {
+            "key": "D",
+            "text": "Cancelar as atividades relacionadas."
+          },
+          {
+            "key": "E",
+            "text": "Comunicar apenas no encerramento do projeto."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-10",
+        "number": 10,
+        "text": "Qual dos itens abaixo faz parte da saída do processo Planejar Respostas aos Riscos?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Plano de gerenciamento do projeto atualizado."
+          },
+          {
+            "key": "B",
+            "text": "Mudanças solicitadas."
+          },
+          {
+            "key": "C",
+            "text": "Registro de premissas."
+          },
+          {
+            "key": "D",
+            "text": "Termo de abertura do projeto."
+          },
+          {
+            "key": "E",
+            "text": "Estrutura analítica do projeto (EAP)."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "2-11",
+        "number": 11,
+        "text": "Risco é definido no PMBOK como:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Um evento futuro certo que afetará o projeto."
+          },
+          {
+            "key": "B",
+            "text": "Um evento incerto que, se ocorrer, terá efeito positivo ou negativo nos objetivos do projeto."
+          },
+          {
+            "key": "C",
+            "text": "Um problema já ocorrido que impacta o projeto."
+          },
+          {
+            "key": "D",
+            "text": "Uma ameaça que deve ser evitada a todo custo."
+          },
+          {
+            "key": "E",
+            "text": "Qualquer evento que atrase o cronograma."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-12",
+        "number": 12,
+        "text": "O processo de monitorar os riscos inclui:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Elaboração da matriz de probabilidade e impacto."
+          },
+          {
+            "key": "B",
+            "text": "Seleção de fornecedores para evitar riscos."
+          },
+          {
+            "key": "C",
+            "text": "Implementação de respostas planejadas e acompanhamento de riscos residuais."
+          },
+          {
+            "key": "D",
+            "text": "Definição de políticas de risco da organização."
+          },
+          {
+            "key": "E",
+            "text": "Aprovação do termo de abertura."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-13",
+        "number": 13,
+        "text": "Um risco identificado que não pode ser eliminado ou mitigado, mas que será aceito pelo gerente de projetos, representa a estratégia de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mitigação"
+          },
+          {
+            "key": "B",
+            "text": "Transferência"
+          },
+          {
+            "key": "C",
+            "text": "Evitação"
+          },
+          {
+            "key": "D",
+            "text": "Aceitação"
+          },
+          {
+            "key": "E",
+            "text": "Exploração"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "2-14",
+        "number": 14,
+        "text": "A criação da matriz de probabilidade e impacto ocorre no processo de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Planejar respostas aos riscos."
+          },
+          {
+            "key": "B",
+            "text": "Analisar qualitativamente os riscos."
+          },
+          {
+            "key": "C",
+            "text": "Analisar quantitativamente os riscos."
+          },
+          {
+            "key": "D",
+            "text": "Monitorar riscos."
+          },
+          {
+            "key": "E",
+            "text": "Planejar gerenciamento dos riscos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-15",
+        "number": 15,
+        "text": "Qual ferramenta é mais apropriada para obter consenso entre especialistas na identificação de riscos?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Brainstorming"
+          },
+          {
+            "key": "B",
+            "text": "Técnica Delphi"
+          },
+          {
+            "key": "C",
+            "text": "Análise de Monte Carlo"
+          },
+          {
+            "key": "D",
+            "text": "Matriz SWOT"
+          },
+          {
+            "key": "E",
+            "text": "Benchmarking"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-16",
+        "number": 16,
+        "text": "Um risco que permanece após a aplicação de uma resposta é chamado de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Risco secundário"
+          },
+          {
+            "key": "B",
+            "text": "Risco latente"
+          },
+          {
+            "key": "C",
+            "text": "Risco residual"
+          },
+          {
+            "key": "D",
+            "text": "Risco transferido"
+          },
+          {
+            "key": "E",
+            "text": "Risco crítico"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-17",
+        "number": 17,
+        "text": "Um risco que surge como consequência da implementação de uma resposta a outro risco é denominado:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Risco secundário"
+          },
+          {
+            "key": "B",
+            "text": "Risco residual"
+          },
+          {
+            "key": "C",
+            "text": "Risco transferido"
+          },
+          {
+            "key": "D",
+            "text": "Risco qualitativo"
+          },
+          {
+            "key": "E",
+            "text": "Risco controlado"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "2-18",
+        "number": 18,
+        "text": "Na análise quantitativa de riscos, uma das principais técnicas é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Entrevistas"
+          },
+          {
+            "key": "B",
+            "text": "Análise de Monte Carlo"
+          },
+          {
+            "key": "C",
+            "text": "Delphi"
+          },
+          {
+            "key": "D",
+            "text": "Matriz SWOT"
+          },
+          {
+            "key": "E",
+            "text": "Registro de lições aprendidas"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-19",
+        "number": 19,
+        "text": "No gerenciamento de riscos, a estratégia de compartilhar é usada para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ameaças"
+          },
+          {
+            "key": "B",
+            "text": "Problemas de comunicação"
+          },
+          {
+            "key": "C",
+            "text": "Oportunidades"
+          },
+          {
+            "key": "D",
+            "text": "Riscos residuais"
+          },
+          {
+            "key": "E",
+            "text": "Custos indiretos"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-20",
+        "number": 20,
+        "text": "O apetite ao risco da organização representa:",
+        "options": [
+          {
+            "key": "A",
+            "text": "A tolerância a riscos residuais após a mitigação."
+          },
+          {
+            "key": "B",
+            "text": "A quantidade de risco que a organização está disposta a aceitar para alcançar seus objetivos."
+          },
+          {
+            "key": "C",
+            "text": "O conjunto de riscos conhecidos pela organização."
+          },
+          {
+            "key": "D",
+            "text": "A soma dos riscos individuais de um projeto."
+          },
+          {
+            "key": "E",
+            "text": "A metodologia usada para análise quantitativa."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-21",
+        "number": 21,
+        "text": "Qual documento contém as respostas planejadas aos riscos?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Plano de comunicação"
+          },
+          {
+            "key": "B",
+            "text": "Registro de riscos"
+          },
+          {
+            "key": "C",
+            "text": "Plano de gerenciamento do escopo"
+          },
+          {
+            "key": "D",
+            "text": "Estrutura analítica de riscos"
+          },
+          {
+            "key": "E",
+            "text": "Registro de premissas"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-22",
+        "number": 22,
+        "text": "Um risco identificado pode ter probabilidade muito baixa, mas impacto muito alto. O gerente deve:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ignorar o risco."
+          },
+          {
+            "key": "B",
+            "text": "Classificá-lo como irrelevante."
+          },
+          {
+            "key": "C",
+            "text": "Avaliá-lo com prioridade devido ao impacto."
+          },
+          {
+            "key": "D",
+            "text": "Eliminá-lo do registro de riscos."
+          },
+          {
+            "key": "E",
+            "text": "Deixar a decisão para o patrocinador."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-23",
+        "number": 23,
+        "text": "No processo de gerenciamento de riscos, as premissas do projeto podem:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Eliminar a necessidade de análise quantitativa."
+          },
+          {
+            "key": "B",
+            "text": "Ser fonte de riscos, caso se mostrem incorretas."
+          },
+          {
+            "key": "C",
+            "text": "Substituir o termo de abertura."
+          },
+          {
+            "key": "D",
+            "text": "Garantir a eliminação de riscos."
+          },
+          {
+            "key": "E",
+            "text": "Ser aplicadas apenas no encerramento."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "2-24",
+        "number": 24,
+        "text": "Qual dos seguintes não é um processo de gerenciamento de riscos no PMBOK?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Planejar o gerenciamento dos riscos"
+          },
+          {
+            "key": "B",
+            "text": "Identificar os riscos"
+          },
+          {
+            "key": "C",
+            "text": "Desenvolver a EAP"
+          },
+          {
+            "key": "D",
+            "text": "Realizar a análise qualitativa dos riscos"
+          },
+          {
+            "key": "E",
+            "text": "Planejar as respostas aos riscos"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "2-25",
+        "number": 25,
+        "text": "Um gerente de projetos contrata um seguro para proteger contra possíveis perdas financeiras. Essa estratégia é exemplo de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mitigação"
+          },
+          {
+            "key": "B",
+            "text": "Transferência"
+          },
+          {
+            "key": "C",
+            "text": "Aceitação ativa"
+          },
+          {
+            "key": "D",
+            "text": "Evitação"
+          },
+          {
+            "key": "E",
+            "text": "Exploração"
+          }
+        ],
+        "answer": "b"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Gerenciamento das Comunicações em Projetos",
+    "questions": [
+      {
+        "id": "3-1",
+        "number": 1,
+        "text": "O objetivo principal do gerenciamento das comunicações em projetos é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Garantir que apenas o gerente do projeto receba todas as informações."
+          },
+          {
+            "key": "B",
+            "text": "Assegurar que as informações do projeto sejam geradas, distribuídas, armazenadas e recuperadas de forma adequada."
+          },
+          {
+            "key": "C",
+            "text": "Centralizar a comunicação em relatórios financeiros."
+          },
+          {
+            "key": "D",
+            "text": "Evitar que partes interessadas tenham acesso às mudanças."
+          },
+          {
+            "key": "E",
+            "text": "Substituir o plano de gerenciamento do projeto."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-2",
+        "number": 2,
+        "text": "Qual processo do gerenciamento de comunicações envolve a criação do plano de comunicações?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Gerenciar as comunicações"
+          },
+          {
+            "key": "B",
+            "text": "Planejar o gerenciamento das comunicações"
+          },
+          {
+            "key": "C",
+            "text": "Monitorar as comunicações"
+          },
+          {
+            "key": "D",
+            "text": "Planejar o gerenciamento das partes interessadas"
+          },
+          {
+            "key": "E",
+            "text": "Desenvolver o cronograma"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-3",
+        "number": 3,
+        "text": "No gerenciamento de comunicações, o número de canais de comunicação em um projeto com 6 membros da equipe é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "6"
+          },
+          {
+            "key": "B",
+            "text": "12"
+          },
+          {
+            "key": "C",
+            "text": "15"
+          },
+          {
+            "key": "D",
+            "text": "21"
+          },
+          {
+            "key": "E",
+            "text": "30"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "3-4",
+        "number": 4,
+        "text": "Qual dos seguintes itens é saída do processo Planejar o gerenciamento das comunicações?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Registro de riscos"
+          },
+          {
+            "key": "B",
+            "text": "Plano de gerenciamento das comunicações"
+          },
+          {
+            "key": "C",
+            "text": "Termo de abertura do projeto"
+          },
+          {
+            "key": "D",
+            "text": "Matriz de probabilidade e impacto"
+          },
+          {
+            "key": "E",
+            "text": "Plano de gerenciamento do cronograma"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-5",
+        "number": 5,
+        "text": "O processo Gerenciar as comunicações tem como foco:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Determinar o apetite ao risco das partes interessadas."
+          },
+          {
+            "key": "B",
+            "text": "Assegurar que a informação seja criada, coletada, distribuída e armazenada de acordo com o plano."
+          },
+          {
+            "key": "C",
+            "text": "Revisar o termo de abertura."
+          },
+          {
+            "key": "D",
+            "text": "Aprovar mudanças solicitadas."
+          },
+          {
+            "key": "E",
+            "text": "Garantir que a comunicação ocorra somente no encerramento."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-6",
+        "number": 6,
+        "text": "O processo de Monitorar as comunicações consiste em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Controlar o cronograma das reuniões."
+          },
+          {
+            "key": "B",
+            "text": "Coletar requisitos das partes interessadas."
+          },
+          {
+            "key": "C",
+            "text": "Avaliar se as necessidades de informação das partes interessadas estão sendo atendidas."
+          },
+          {
+            "key": "D",
+            "text": "Criar o plano de gerenciamento de riscos."
+          },
+          {
+            "key": "E",
+            "text": "Aprovar o orçamento do projeto."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "3-7",
+        "number": 7,
+        "text": "Uma das principais entradas do processo Planejar o gerenciamento das comunicações é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estrutura analítica do projeto (EAP)"
+          },
+          {
+            "key": "B",
+            "text": "Registro das partes interessadas"
+          },
+          {
+            "key": "C",
+            "text": "Registro de riscos"
+          },
+          {
+            "key": "D",
+            "text": "Linha de base de custos"
+          },
+          {
+            "key": "E",
+            "text": "Relatório de desempenho"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-8",
+        "number": 8,
+        "text": "O modelo de comunicação interativa é caracterizado por:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Fluxo unidirecional de informações."
+          },
+          {
+            "key": "B",
+            "text": "Comunicação realizada apenas por relatórios."
+          },
+          {
+            "key": "C",
+            "text": "Troca bidirecional de informações em tempo real."
+          },
+          {
+            "key": "D",
+            "text": "Comunicação formal apenas com patrocinadores."
+          },
+          {
+            "key": "E",
+            "text": "Apenas uso de sistemas eletrônicos."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "3-9",
+        "number": 9,
+        "text": "Um exemplo de comunicação push é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Reunião presencial"
+          },
+          {
+            "key": "B",
+            "text": "Relatórios enviados por e-mail"
+          },
+          {
+            "key": "C",
+            "text": "Dashboard de acompanhamento acessado sob demanda"
+          },
+          {
+            "key": "D",
+            "text": "Videoconferência"
+          },
+          {
+            "key": "E",
+            "text": "Conversa telefônica"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-10",
+        "number": 10,
+        "text": "Um dashboard de desempenho online em que as partes interessadas acessam informações sob demanda é exemplo de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Comunicação push"
+          },
+          {
+            "key": "B",
+            "text": "Comunicação interativa"
+          },
+          {
+            "key": "C",
+            "text": "Comunicação pull"
+          },
+          {
+            "key": "D",
+            "text": "Comunicação formal"
+          },
+          {
+            "key": "E",
+            "text": "Comunicação ascendente"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "3-11",
+        "number": 11,
+        "text": "Qual técnica pode ser usada para melhorar a eficácia da comunicação com partes interessadas de diferentes culturas?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mitigação de riscos"
+          },
+          {
+            "key": "B",
+            "text": "Escuta ativa e adaptação cultural"
+          },
+          {
+            "key": "C",
+            "text": "Diagrama de rede"
+          },
+          {
+            "key": "D",
+            "text": "Técnica Delphi"
+          },
+          {
+            "key": "E",
+            "text": "Análise Monte Carlo"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-12",
+        "number": 12,
+        "text": "A comunicação em projetos pode ser formal ou informal, escrita ou verbal. Um e-mail enviado ao cliente é considerado:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Comunicação formal escrita"
+          },
+          {
+            "key": "B",
+            "text": "Comunicação informal verbal"
+          },
+          {
+            "key": "C",
+            "text": "Comunicação formal verbal"
+          },
+          {
+            "key": "D",
+            "text": "Comunicação informal escrita"
+          },
+          {
+            "key": "E",
+            "text": "Comunicação interativa verbal"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "3-13",
+        "number": 13,
+        "text": "O plano de gerenciamento das comunicações especifica:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas os relatórios financeiros do projeto."
+          },
+          {
+            "key": "B",
+            "text": "Quando, como e quem deve receber as informações do projeto."
+          },
+          {
+            "key": "C",
+            "text": "O controle de mudanças."
+          },
+          {
+            "key": "D",
+            "text": "A EAP detalhada."
+          },
+          {
+            "key": "E",
+            "text": "O orçamento de comunicação."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-14",
+        "number": 14,
+        "text": "Um gerente de projetos cria um relatório mensal para o patrocinador, seguindo formato definido. Esse tipo de comunicação é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Formal e escrita"
+          },
+          {
+            "key": "B",
+            "text": "Informal e verbal"
+          },
+          {
+            "key": "C",
+            "text": "Interativa"
+          },
+          {
+            "key": "D",
+            "text": "Ascendente e pull"
+          },
+          {
+            "key": "E",
+            "text": "Push e verbal"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "3-15",
+        "number": 15,
+        "text": "Um ruído na comunicação pode ser definido como:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Qualquer fator que compromete a transmissão ou compreensão da mensagem."
+          },
+          {
+            "key": "B",
+            "text": "O excesso de relatórios do projeto."
+          },
+          {
+            "key": "C",
+            "text": "A falta de cronograma atualizado."
+          },
+          {
+            "key": "D",
+            "text": "O não uso de ferramentas de comunicação digital."
+          },
+          {
+            "key": "E",
+            "text": "A ausência de reuniões presenciais."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "3-16",
+        "number": 16,
+        "text": "Uma reunião de alinhamento semanal da equipe é exemplo de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Comunicação formal escrita"
+          },
+          {
+            "key": "B",
+            "text": "Comunicação push"
+          },
+          {
+            "key": "C",
+            "text": "Comunicação pull"
+          },
+          {
+            "key": "D",
+            "text": "Comunicação interativa"
+          },
+          {
+            "key": "E",
+            "text": "Comunicação descendente"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "3-17",
+        "number": 17,
+        "text": "O gerente de projetos deve adaptar a comunicação com base em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O orçamento do projeto."
+          },
+          {
+            "key": "B",
+            "text": "O apetite a riscos da organização."
+          },
+          {
+            "key": "C",
+            "text": "As necessidades e expectativas das partes interessadas."
+          },
+          {
+            "key": "D",
+            "text": "As premissas definidas no termo de abertura."
+          },
+          {
+            "key": "E",
+            "text": "As restrições de cronograma."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "3-18",
+        "number": 18,
+        "text": "Qual é a ferramenta frequentemente usada para planejar comunicações entre partes interessadas?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Matriz de probabilidade e impacto"
+          },
+          {
+            "key": "B",
+            "text": "Matriz de poder e interesse"
+          },
+          {
+            "key": "C",
+            "text": "Matriz de responsabilidades (RACI)"
+          },
+          {
+            "key": "D",
+            "text": "Matriz de comunicação"
+          },
+          {
+            "key": "E",
+            "text": "Curva S"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "3-19",
+        "number": 19,
+        "text": "Qual é a principal função do processo de gerenciar as comunicações?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Determinar os canais de comunicação da equipe."
+          },
+          {
+            "key": "B",
+            "text": "Executar o que foi planejado e assegurar que as mensagens sejam entregues adequadamente."
+          },
+          {
+            "key": "C",
+            "text": "Reduzir os riscos do projeto."
+          },
+          {
+            "key": "D",
+            "text": "Encerrar formalmente o projeto."
+          },
+          {
+            "key": "E",
+            "text": "Criar as atas de reunião."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-20",
+        "number": 20,
+        "text": "Uma comunicação eficaz deve ser:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Formal e escrita."
+          },
+          {
+            "key": "B",
+            "text": "O mais detalhada possível, independentemente do público."
+          },
+          {
+            "key": "C",
+            "text": "Adaptada ao público-alvo, clara e objetiva."
+          },
+          {
+            "key": "D",
+            "text": "Apenas verbal, para evitar registros."
+          },
+          {
+            "key": "E",
+            "text": "Exclusiva para a equipe de projetos."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "3-21",
+        "number": 21,
+        "text": "Qual dos seguintes não é um processo do gerenciamento das comunicações?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Planejar o gerenciamento das comunicações"
+          },
+          {
+            "key": "B",
+            "text": "Gerenciar as comunicações"
+          },
+          {
+            "key": "C",
+            "text": "Monitorar as comunicações"
+          },
+          {
+            "key": "D",
+            "text": "Desenvolver o plano de gerenciamento do escopo"
+          },
+          {
+            "key": "E",
+            "text": "Nenhuma das alternativas"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "3-22",
+        "number": 22,
+        "text": "A comunicação descendente em projetos refere-se a:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mensagens que fluem da equipe para o gerente."
+          },
+          {
+            "key": "B",
+            "text": "Informações trocadas entre membros no mesmo nível hierárquico."
+          },
+          {
+            "key": "C",
+            "text": "Comunicação enviada da gerência para os subordinados."
+          },
+          {
+            "key": "D",
+            "text": "Comunicação entre fornecedores e clientes."
+          },
+          {
+            "key": "E",
+            "text": "Comunicação informal por canais paralelos."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "3-23",
+        "number": 23,
+        "text": "Um patrocinador acessa diretamente o sistema para visualizar relatórios de desempenho. Isso é um exemplo de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Comunicação push"
+          },
+          {
+            "key": "B",
+            "text": "Comunicação pull"
+          },
+          {
+            "key": "C",
+            "text": "Comunicação interativa"
+          },
+          {
+            "key": "D",
+            "text": "Comunicação formal verbal"
+          },
+          {
+            "key": "E",
+            "text": "Comunicação informal escrita"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "3-24",
+        "number": 24,
+        "text": "Qual dos seguintes é um artefato resultante do processo Gerenciar as comunicações?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Relatórios de desempenho"
+          },
+          {
+            "key": "B",
+            "text": "Termo de abertura do projeto"
+          },
+          {
+            "key": "C",
+            "text": "Estrutura analítica do projeto (EAP)"
+          },
+          {
+            "key": "D",
+            "text": "Matriz de riscos"
+          },
+          {
+            "key": "E",
+            "text": "Registro das premissas"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "3-25",
+        "number": 25,
+        "text": "Se uma parte interessada afirma que não recebeu informações importantes apesar de o gerente ter enviado relatórios semanais, qual pode ter sido o problema?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Falha no gerenciamento de riscos."
+          },
+          {
+            "key": "B",
+            "text": "Problema de cronograma."
+          },
+          {
+            "key": "C",
+            "text": "Falha no processo de comunicação (diferença entre transmitir e compreender a mensagem)."
+          },
+          {
+            "key": "D",
+            "text": "Problema de custo."
+          },
+          {
+            "key": "E",
+            "text": "Falta de análise de Monte Carlo."
+          }
+        ],
+        "answer": "c"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Gerenciamento da Qualidade em Projetos",
+    "questions": [
+      {
+        "id": "4-1",
+        "number": 1,
+        "text": "O gerenciamento da qualidade em projetos tem como objetivo principal:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Garantir que o projeto seja entregue dentro do prazo."
+          },
+          {
+            "key": "B",
+            "text": "Assegurar que o projeto satisfaça as necessidades para as quais foi empreendido."
+          },
+          {
+            "key": "C",
+            "text": "Reduzir os custos do projeto em todas as fases."
+          },
+          {
+            "key": "D",
+            "text": "Eliminar todos os riscos associados ao projeto."
+          },
+          {
+            "key": "E",
+            "text": "Criar relatórios de desempenho semanais."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-2",
+        "number": 2,
+        "text": "O processo Planejar o gerenciamento da qualidade resulta principalmente em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Plano de gerenciamento do cronograma."
+          },
+          {
+            "key": "B",
+            "text": "Relatório de riscos."
+          },
+          {
+            "key": "C",
+            "text": "Plano de gerenciamento da qualidade."
+          },
+          {
+            "key": "D",
+            "text": "Linha de base do escopo."
+          },
+          {
+            "key": "E",
+            "text": "Registro de premissas."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "4-3",
+        "number": 3,
+        "text": "O processo Gerenciar a qualidade tem como foco:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Auditar os requisitos de qualidade e os resultados de controle de qualidade."
+          },
+          {
+            "key": "B",
+            "text": "Definir os requisitos de comunicação com partes interessadas."
+          },
+          {
+            "key": "C",
+            "text": "Estimar custos de conformidade."
+          },
+          {
+            "key": "D",
+            "text": "Monitorar as entregas para verificar aderência aos padrões definidos."
+          },
+          {
+            "key": "E",
+            "text": "Criar a EAP do projeto."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "4-4",
+        "number": 4,
+        "text": "O processo Controlar a qualidade envolve:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Criar a linha de base de custos."
+          },
+          {
+            "key": "B",
+            "text": "Monitorar e registrar resultados da execução da qualidade para avaliar o desempenho e recomendar mudanças."
+          },
+          {
+            "key": "C",
+            "text": "Criar a declaração do escopo."
+          },
+          {
+            "key": "D",
+            "text": "Estabelecer as políticas de recursos humanos."
+          },
+          {
+            "key": "E",
+            "text": "Gerenciar comunicações com fornecedores."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-5",
+        "number": 5,
+        "text": "Uma lista de verificação (checklist) é usada principalmente em qual processo da qualidade?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Planejar a qualidade"
+          },
+          {
+            "key": "B",
+            "text": "Gerenciar a qualidade"
+          },
+          {
+            "key": "C",
+            "text": "Controlar a qualidade"
+          },
+          {
+            "key": "D",
+            "text": "Identificar riscos"
+          },
+          {
+            "key": "E",
+            "text": "Desenvolver o cronograma"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "4-6",
+        "number": 6,
+        "text": "O custo da qualidade é composto por:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Custos de conformidade e custos de não conformidade."
+          },
+          {
+            "key": "B",
+            "text": "Custos diretos e indiretos."
+          },
+          {
+            "key": "C",
+            "text": "Custos de pessoal e materiais."
+          },
+          {
+            "key": "D",
+            "text": "Custos fixos e variáveis."
+          },
+          {
+            "key": "E",
+            "text": "Custos de aquisição e operação."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "4-7",
+        "number": 7,
+        "text": "Um exemplo de custo de não conformidade é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Treinamento da equipe em qualidade."
+          },
+          {
+            "key": "B",
+            "text": "Auditoria interna do projeto."
+          },
+          {
+            "key": "C",
+            "text": "Retrabalho devido a defeito."
+          },
+          {
+            "key": "D",
+            "text": "Implementação de melhorias de processo."
+          },
+          {
+            "key": "E",
+            "text": "Testes preventivos de software."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "4-8",
+        "number": 8,
+        "text": "A garantia da qualidade refere-se a:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Inspeção de entregas já concluídas."
+          },
+          {
+            "key": "B",
+            "text": "Atividades planejadas e sistemáticas para garantir que o projeto atenda aos requisitos de qualidade."
+          },
+          {
+            "key": "C",
+            "text": "Verificação de defeitos em produtos finais."
+          },
+          {
+            "key": "D",
+            "text": "Criação do termo de abertura."
+          },
+          {
+            "key": "E",
+            "text": "Controle de mudanças no cronograma."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-9",
+        "number": 9,
+        "text": "O Diagrama de Causa e Efeito (Ishikawa ou Espinha de Peixe) é usado para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Identificar a sequência de atividades."
+          },
+          {
+            "key": "B",
+            "text": "Determinar a causa raiz de problemas de qualidade."
+          },
+          {
+            "key": "C",
+            "text": "Analisar probabilidades de risco."
+          },
+          {
+            "key": "D",
+            "text": "Construir a linha de base do escopo."
+          },
+          {
+            "key": "E",
+            "text": "Elaborar estimativas de custos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-10",
+        "number": 10,
+        "text": "Qual das opções não é uma ferramenta de controle da qualidade?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Histogramas"
+          },
+          {
+            "key": "B",
+            "text": "Gráficos de Pareto"
+          },
+          {
+            "key": "C",
+            "text": "Gráficos de controle"
+          },
+          {
+            "key": "D",
+            "text": "Matriz RACI"
+          },
+          {
+            "key": "E",
+            "text": "Inspeções"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "4-11",
+        "number": 11,
+        "text": "Os sete instrumentos básicos da qualidade incluem:",
+        "options": [
+          {
+            "key": "A",
+            "text": "EAP, Cronograma e Histograma"
+          },
+          {
+            "key": "B",
+            "text": "Diagrama de Pareto, Gráfico de controle, Diagrama de dispersão, Fluxograma, Histograma, Diagrama de causa e efeito, Lista de verificação"
+          },
+          {
+            "key": "C",
+            "text": "Benchmarking, Delphi, Monte Carlo, SWOT, Histogramas, Fluxogramas, Brainstorming"
+          },
+          {
+            "key": "D",
+            "text": "Plano de comunicação, RACI, Checklist, Ishikawa, Pareto, SWOT, Fluxograma"
+          },
+          {
+            "key": "E",
+            "text": "Curva S, Cronograma, Orçamento, EAP, Ishikawa, Checklist, Monte Carlo"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-12",
+        "number": 12,
+        "text": "O Diagrama de Pareto auxilia o gerente de projetos a:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Identificar a sequência lógica de atividades."
+          },
+          {
+            "key": "B",
+            "text": "Demonstrar que poucos problemas são responsáveis pela maioria dos defeitos."
+          },
+          {
+            "key": "C",
+            "text": "Acompanhar o progresso do cronograma."
+          },
+          {
+            "key": "D",
+            "text": "Realizar análise de riscos quantitativos."
+          },
+          {
+            "key": "E",
+            "text": "Criar o plano de recursos humanos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-13",
+        "number": 13,
+        "text": "O conceito de melhoria contínua da qualidade é associado a:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Kaizen"
+          },
+          {
+            "key": "B",
+            "text": "Monte Carlo"
+          },
+          {
+            "key": "C",
+            "text": "Ciclo Delphi"
+          },
+          {
+            "key": "D",
+            "text": "RACI"
+          },
+          {
+            "key": "E",
+            "text": "SWOT"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "4-14",
+        "number": 14,
+        "text": "O ciclo PDCA (Plan-Do-Check-Act) é utilizado no gerenciamento da qualidade para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Gerenciar custos de aquisição."
+          },
+          {
+            "key": "B",
+            "text": "Estruturar o processo de melhoria contínua."
+          },
+          {
+            "key": "C",
+            "text": "Determinar requisitos do escopo."
+          },
+          {
+            "key": "D",
+            "text": "Aprovar mudanças de cronograma."
+          },
+          {
+            "key": "E",
+            "text": "Controlar riscos residuais."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-15",
+        "number": 15,
+        "text": "O benchmarking é uma técnica aplicada em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Identificação de riscos"
+          },
+          {
+            "key": "B",
+            "text": "Planejamento da qualidade"
+          },
+          {
+            "key": "C",
+            "text": "Controle da qualidade"
+          },
+          {
+            "key": "D",
+            "text": "Estimativas de custos"
+          },
+          {
+            "key": "E",
+            "text": "Gerenciamento de cronograma"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-16",
+        "number": 16,
+        "text": "Qual é a relação entre qualidade e grau de um produto?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Produtos de alto grau têm sempre alta qualidade."
+          },
+          {
+            "key": "B",
+            "text": "Grau e qualidade são sinônimos."
+          },
+          {
+            "key": "C",
+            "text": "Grau refere-se a características do produto, enquanto qualidade refere-se à conformidade com requisitos."
+          },
+          {
+            "key": "D",
+            "text": "Produtos de baixo grau nunca podem ter boa qualidade."
+          },
+          {
+            "key": "E",
+            "text": "Grau refere-se a custos de produção e qualidade à satisfação do cliente."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "4-17",
+        "number": 17,
+        "text": "Um plano de gerenciamento da qualidade inclui:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Identificação de partes interessadas."
+          },
+          {
+            "key": "B",
+            "text": "Métricas de qualidade, papéis, responsabilidades e ferramentas de qualidade a serem usadas."
+          },
+          {
+            "key": "C",
+            "text": "Planos de mitigação de riscos."
+          },
+          {
+            "key": "D",
+            "text": "Relação de fornecedores e contratos."
+          },
+          {
+            "key": "E",
+            "text": "Estrutura de custos fixos e variáveis."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-18",
+        "number": 18,
+        "text": "A auditoria da qualidade é realizada no processo:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Controlar a qualidade"
+          },
+          {
+            "key": "B",
+            "text": "Gerenciar a qualidade"
+          },
+          {
+            "key": "C",
+            "text": "Planejar a qualidade"
+          },
+          {
+            "key": "D",
+            "text": "Desenvolver a EAP"
+          },
+          {
+            "key": "E",
+            "text": "Encerrar o projeto"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-19",
+        "number": 19,
+        "text": "O fluxograma é usado no gerenciamento da qualidade para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Definir responsabilidades da equipe."
+          },
+          {
+            "key": "B",
+            "text": "Representar graficamente um processo e suas etapas."
+          },
+          {
+            "key": "C",
+            "text": "Criar o cronograma do projeto."
+          },
+          {
+            "key": "D",
+            "text": "Avaliar probabilidades de risco."
+          },
+          {
+            "key": "E",
+            "text": "Estimar recursos de atividades."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-20",
+        "number": 20,
+        "text": "O gráfico de controle é utilizado para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Demonstrar a variação de processos ao longo do tempo."
+          },
+          {
+            "key": "B",
+            "text": "Calcular o caminho crítico do projeto."
+          },
+          {
+            "key": "C",
+            "text": "Comparar custos planejados e realizados."
+          },
+          {
+            "key": "D",
+            "text": "Identificar partes interessadas críticas."
+          },
+          {
+            "key": "E",
+            "text": "Mapear responsabilidades funcionais."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "4-21",
+        "number": 21,
+        "text": "Um exemplo de custo de conformidade é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pagamento de multa por atraso."
+          },
+          {
+            "key": "B",
+            "text": "Retrabalho após entrega defeituosa."
+          },
+          {
+            "key": "C",
+            "text": "Treinamento da equipe em qualidade."
+          },
+          {
+            "key": "D",
+            "text": "Perda de cliente por falha em produto."
+          },
+          {
+            "key": "E",
+            "text": "Devolução de material defeituoso."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "4-22",
+        "number": 22,
+        "text": "Qual documento contém os critérios de aceitação da qualidade definidos para o projeto?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Registro de riscos"
+          },
+          {
+            "key": "B",
+            "text": "Plano de gerenciamento da qualidade"
+          },
+          {
+            "key": "C",
+            "text": "Declaração do escopo"
+          },
+          {
+            "key": "D",
+            "text": "EAP"
+          },
+          {
+            "key": "E",
+            "text": "Plano de recursos humanos"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-23",
+        "number": 23,
+        "text": "Um gerente de projetos utiliza o Diagrama de Dispersão para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Analisar a correlação entre duas variáveis."
+          },
+          {
+            "key": "B",
+            "text": "Identificar causas de problemas complexos."
+          },
+          {
+            "key": "C",
+            "text": "Priorizar os defeitos mais significativos."
+          },
+          {
+            "key": "D",
+            "text": "Controlar riscos."
+          },
+          {
+            "key": "E",
+            "text": "Definir premissas."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "4-24",
+        "number": 24,
+        "text": "A aplicação das sete ferramentas básicas da qualidade está mais associada ao processo:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Planejar a qualidade"
+          },
+          {
+            "key": "B",
+            "text": "Controlar a qualidade"
+          },
+          {
+            "key": "C",
+            "text": "Monitorar riscos"
+          },
+          {
+            "key": "D",
+            "text": "Planejar o cronograma"
+          },
+          {
+            "key": "E",
+            "text": "Controlar custos"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "4-25",
+        "number": 25,
+        "text": "Qual das opções a seguir é uma saída do processo Controlar a qualidade?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Relatório de riscos"
+          },
+          {
+            "key": "B",
+            "text": "Solicitações de mudança"
+          },
+          {
+            "key": "C",
+            "text": "Plano de gerenciamento da comunicação"
+          },
+          {
+            "key": "D",
+            "text": "Registro de premissas"
+          },
+          {
+            "key": "E",
+            "text": "Termo de abertura"
+          }
+        ],
+        "answer": "b"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Gerenciamento de Aquisições em Projetos",
+    "questions": [
+      {
+        "id": "5-1",
+        "number": 1,
+        "text": "O objetivo principal do gerenciamento de aquisições em projetos é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Garantir que o projeto seja executado apenas com recursos internos."
+          },
+          {
+            "key": "B",
+            "text": "Controlar apenas o custo das compras."
+          },
+          {
+            "key": "C",
+            "text": "Obter bens e serviços de fora da equipe do projeto de forma eficiente e eficaz."
+          },
+          {
+            "key": "D",
+            "text": "Elaborar relatórios financeiros sobre fornecedores."
+          },
+          {
+            "key": "E",
+            "text": "Reduzir riscos do cronograma."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "5-2",
+        "number": 2,
+        "text": "Qual é a primeira etapa no processo de aquisições?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Controlar as aquisições"
+          },
+          {
+            "key": "B",
+            "text": "Conduzir as aquisições"
+          },
+          {
+            "key": "C",
+            "text": "Planejar o gerenciamento das aquisições"
+          },
+          {
+            "key": "D",
+            "text": "Encerrar as aquisições"
+          },
+          {
+            "key": "E",
+            "text": "Selecionar fornecedores"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "5-3",
+        "number": 3,
+        "text": "O documento que define a abordagem de compras e contratos é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Registro de riscos"
+          },
+          {
+            "key": "B",
+            "text": "Plano de gerenciamento das aquisições"
+          },
+          {
+            "key": "C",
+            "text": "Termo de abertura"
+          },
+          {
+            "key": "D",
+            "text": "Registro das partes interessadas"
+          },
+          {
+            "key": "E",
+            "text": "Plano de comunicação"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-4",
+        "number": 4,
+        "text": "Um contrato de preço fixo é mais adequado quando:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O escopo do trabalho é bem definido."
+          },
+          {
+            "key": "B",
+            "text": "O escopo é incerto."
+          },
+          {
+            "key": "C",
+            "text": "O cliente deseja flexibilidade máxima."
+          },
+          {
+            "key": "D",
+            "text": "O fornecedor assume pouco risco."
+          },
+          {
+            "key": "E",
+            "text": "O pagamento depende de horas trabalhadas."
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "5-5",
+        "number": 5,
+        "text": "No contrato por tempo e material (T&M):",
+        "options": [
+          {
+            "key": "A",
+            "text": "O fornecedor assume todo o risco."
+          },
+          {
+            "key": "B",
+            "text": "O comprador paga um valor fixo por todo o trabalho."
+          },
+          {
+            "key": "C",
+            "text": "O pagamento é baseado em taxas horárias ou de material consumido."
+          },
+          {
+            "key": "D",
+            "text": "O comprador não tem controle sobre custos."
+          },
+          {
+            "key": "E",
+            "text": "O fornecedor garante todos os resultados."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "5-6",
+        "number": 6,
+        "text": "Um contrato de custo reembolsável é mais adequado quando:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O trabalho é bem definido e estável."
+          },
+          {
+            "key": "B",
+            "text": "O trabalho é incerto e precisa de flexibilidade."
+          },
+          {
+            "key": "C",
+            "text": "O comprador não quer correr riscos."
+          },
+          {
+            "key": "D",
+            "text": "O fornecedor exige pagamento fixo."
+          },
+          {
+            "key": "E",
+            "text": "O cliente não quer transparência nos custos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-7",
+        "number": 7,
+        "text": "Qual dos seguintes não é um tipo de contrato reconhecido no PMBOK?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Preço fixo (FP)"
+          },
+          {
+            "key": "B",
+            "text": "Custo reembolsável (CR)"
+          },
+          {
+            "key": "C",
+            "text": "Tempo e material (T&M)"
+          },
+          {
+            "key": "D",
+            "text": "Lucro compartilhado (LS)"
+          },
+          {
+            "key": "E",
+            "text": "Preço fixo com incentivo (FPI)"
+          }
+        ],
+        "answer": "d"
+      },
+      {
+        "id": "5-8",
+        "number": 8,
+        "text": "Durante o processo Conduzir as aquisições, uma das principais atividades é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Elaborar o termo de abertura."
+          },
+          {
+            "key": "B",
+            "text": "Avaliar propostas de fornecedores e selecionar o vencedor."
+          },
+          {
+            "key": "C",
+            "text": "Definir os critérios de aceitação do projeto."
+          },
+          {
+            "key": "D",
+            "text": "Criar a EAP."
+          },
+          {
+            "key": "E",
+            "text": "Revisar o plano de comunicação."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-9",
+        "number": 9,
+        "text": "O documento usado para solicitar propostas a fornecedores é conhecido como:",
+        "options": [
+          {
+            "key": "A",
+            "text": "RFI (Request for Information)"
+          },
+          {
+            "key": "B",
+            "text": "RFP (Request for Proposal)"
+          },
+          {
+            "key": "C",
+            "text": "RFQ (Request for Quotation)"
+          },
+          {
+            "key": "D",
+            "text": "RFB (Request for Bid)"
+          },
+          {
+            "key": "E",
+            "text": "Todos os anteriores"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-10",
+        "number": 10,
+        "text": "O processo Controlar as aquisições envolve:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Definir se uma compra será feita ou não."
+          },
+          {
+            "key": "B",
+            "text": "Monitorar o desempenho dos fornecedores e gerenciar mudanças contratuais."
+          },
+          {
+            "key": "C",
+            "text": "Criar contratos."
+          },
+          {
+            "key": "D",
+            "text": "Cancelar aquisições não planejadas."
+          },
+          {
+            "key": "E",
+            "text": "Encerrar formalmente o projeto."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-11",
+        "number": 11,
+        "text": "A responsabilidade principal de garantir que ambas as partes cumpram suas obrigações contratuais pertence a:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Escritório de projetos (PMO)"
+          },
+          {
+            "key": "B",
+            "text": "Equipe de qualidade"
+          },
+          {
+            "key": "C",
+            "text": "Gerente de projetos"
+          },
+          {
+            "key": "D",
+            "text": "Patrocinador"
+          },
+          {
+            "key": "E",
+            "text": "Área de comunicação"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "5-12",
+        "number": 12,
+        "text": "O encerramento das aquisições consiste em:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Revisar o plano de comunicação."
+          },
+          {
+            "key": "B",
+            "text": "Confirmar que todo o trabalho contratado foi concluído de forma satisfatória."
+          },
+          {
+            "key": "C",
+            "text": "Cancelar contratos em andamento."
+          },
+          {
+            "key": "D",
+            "text": "Elaborar o termo de abertura."
+          },
+          {
+            "key": "E",
+            "text": "Iniciar a análise de riscos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-13",
+        "number": 13,
+        "text": "Em contratos de preço fixo com incentivo (FPI):",
+        "options": [
+          {
+            "key": "A",
+            "text": "O risco é totalmente do comprador."
+          },
+          {
+            "key": "B",
+            "text": "O risco é totalmente do fornecedor."
+          },
+          {
+            "key": "C",
+            "text": "O fornecedor pode receber bônus se atingir metas de custo, prazo ou desempenho."
+          },
+          {
+            "key": "D",
+            "text": "O valor pago depende apenas de horas trabalhadas."
+          },
+          {
+            "key": "E",
+            "text": "Não há margem de negociação."
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "id": "5-14",
+        "number": 14,
+        "text": "Qual das alternativas é uma entrada para o processo Planejar o gerenciamento das aquisições?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Registro de riscos"
+          },
+          {
+            "key": "B",
+            "text": "Plano de gerenciamento do cronograma"
+          },
+          {
+            "key": "C",
+            "text": "Registro das partes interessadas"
+          },
+          {
+            "key": "D",
+            "text": "Linha de base do escopo"
+          },
+          {
+            "key": "E",
+            "text": "Todas as anteriores"
+          }
+        ],
+        "answer": "e"
+      },
+      {
+        "id": "5-15",
+        "number": 15,
+        "text": "O contrato de custo mais taxa de incentivo (CPIF) garante que:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O fornecedor é pago apenas se terminar no prazo."
+          },
+          {
+            "key": "B",
+            "text": "O comprador paga os custos e uma taxa adicional se o desempenho atender a critérios preestabelecidos."
+          },
+          {
+            "key": "C",
+            "text": "O fornecedor assume todo o risco financeiro."
+          },
+          {
+            "key": "D",
+            "text": "O pagamento é baseado em taxa fixa."
+          },
+          {
+            "key": "E",
+            "text": "O comprador não tem controle sobre custos."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-16",
+        "number": 16,
+        "text": "No gerenciamento de aquisições, a análise de make-or-buy é usada para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Definir os critérios de aceitação da qualidade."
+          },
+          {
+            "key": "B",
+            "text": "Decidir se um produto ou serviço será produzido internamente ou adquirido externamente."
+          },
+          {
+            "key": "C",
+            "text": "Avaliar os riscos do cronograma."
+          },
+          {
+            "key": "D",
+            "text": "Determinar a probabilidade de falhas em fornecedores."
+          },
+          {
+            "key": "E",
+            "text": "Definir as necessidades de comunicação."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-17",
+        "number": 17,
+        "text": "Uma cláusula contratual que define penalidades por atraso é chamada de:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Incentivo positivo"
+          },
+          {
+            "key": "B",
+            "text": "Multa contratual (cláusula de penalidade)"
+          },
+          {
+            "key": "C",
+            "text": "Termo de abertura"
+          },
+          {
+            "key": "D",
+            "text": "Garantia de qualidade"
+          },
+          {
+            "key": "E",
+            "text": "Registro de riscos"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-18",
+        "number": 18,
+        "text": "Qual ferramenta pode ser usada para avaliar fornecedores durante o processo Conduzir as aquisições?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Matriz de probabilidade e impacto"
+          },
+          {
+            "key": "B",
+            "text": "Matriz de decisão multicritério"
+          },
+          {
+            "key": "C",
+            "text": "Diagrama de Ishikawa"
+          },
+          {
+            "key": "D",
+            "text": "Técnica Delphi"
+          },
+          {
+            "key": "E",
+            "text": "Fluxograma"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-19",
+        "number": 19,
+        "text": "O processo Planejar o gerenciamento das aquisições ocorre em qual grupo de processos?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iniciação"
+          },
+          {
+            "key": "B",
+            "text": "Planejamento"
+          },
+          {
+            "key": "C",
+            "text": "Execução"
+          },
+          {
+            "key": "D",
+            "text": "Monitoramento e Controle"
+          },
+          {
+            "key": "E",
+            "text": "Encerramento"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-20",
+        "number": 20,
+        "text": "No gerenciamento de aquisições, o termo \"buyer\" refere-se a:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Fornecedor"
+          },
+          {
+            "key": "B",
+            "text": "Cliente"
+          },
+          {
+            "key": "C",
+            "text": "Contratado"
+          },
+          {
+            "key": "D",
+            "text": "Vendedor"
+          },
+          {
+            "key": "E",
+            "text": "Prestador de serviço"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-21",
+        "number": 21,
+        "text": "Em um contrato T&M (tempo e material), o risco de custo maior normalmente recai sobre:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O comprador"
+          },
+          {
+            "key": "B",
+            "text": "O fornecedor"
+          },
+          {
+            "key": "C",
+            "text": "O patrocinador"
+          },
+          {
+            "key": "D",
+            "text": "O gerente de projetos"
+          },
+          {
+            "key": "E",
+            "text": "O escritório de projetos (PMO)"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "id": "5-22",
+        "number": 22,
+        "text": "A auditoria de aquisições é usada para:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Encerrar o contrato com fornecedor de forma judicial."
+          },
+          {
+            "key": "B",
+            "text": "Identificar lições aprendidas para melhorar aquisições futuras."
+          },
+          {
+            "key": "C",
+            "text": "Alterar cláusulas contratuais em andamento."
+          },
+          {
+            "key": "D",
+            "text": "Eliminar riscos do contrato."
+          },
+          {
+            "key": "E",
+            "text": "Revisar a comunicação interna."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-23",
+        "number": 23,
+        "text": "Um contrato de custo mais taxa fixa (CPFF) significa que:",
+        "options": [
+          {
+            "key": "A",
+            "text": "O fornecedor é pago apenas se reduzir custos."
+          },
+          {
+            "key": "B",
+            "text": "O comprador paga os custos e uma taxa fixa de lucro, independentemente do desempenho."
+          },
+          {
+            "key": "C",
+            "text": "O fornecedor assume todo o risco."
+          },
+          {
+            "key": "D",
+            "text": "O pagamento é baseado em produtividade."
+          },
+          {
+            "key": "E",
+            "text": "O comprador paga valor fixo total, sem flexibilidade."
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-24",
+        "number": 24,
+        "text": "A principal saída do processo Encerrar as aquisições é:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Solicitações de mudança"
+          },
+          {
+            "key": "B",
+            "text": "Encerramento formal do contrato"
+          },
+          {
+            "key": "C",
+            "text": "Registro de riscos"
+          },
+          {
+            "key": "D",
+            "text": "EAP atualizada"
+          },
+          {
+            "key": "E",
+            "text": "Relatórios de comunicação"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "id": "5-25",
+        "number": 25,
+        "text": "Um gerente de projetos está avaliando propostas de fornecedores e decide dar maior peso à qualidade técnica em vez do menor preço. Ele está utilizando:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Análise SWOT"
+          },
+          {
+            "key": "B",
+            "text": "Análise de decisão multicritério"
+          },
+          {
+            "key": "C",
+            "text": "Benchmarking"
+          },
+          {
+            "key": "D",
+            "text": "Técnica Delphi"
+          },
+          {
+            "key": "E",
+            "text": "Estrutura analítica do projeto"
+          }
+        ],
+        "answer": "b"
+      }
+    ]
+  }
+]
