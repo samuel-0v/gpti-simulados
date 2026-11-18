@@ -2,7 +2,9 @@
 
 Protótipo local de revisão baseado no PDF de simulados PMBOK enviado.
 
-**Acesso público:** https://gpti-simulados.vercel.app/
+**Acesso público:** [Abrir o site](https://gpti-simulados.vercel.app/)
+
+A branch `main` está conectada ao Vercel; novos commits nela iniciam uma atualização de produção automática.
 
 ## Funcionalidades
 - Cinco simulados temáticos com 25 questões cada: Custos, Riscos, Comunicações, Qualidade e Aquisições.
