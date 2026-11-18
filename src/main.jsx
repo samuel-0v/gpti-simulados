@@ -1,35 +1,496 @@
-import React, {useEffect, useMemo, useState} from 'react';
-import {createRoot} from 'react-dom/client';
-import {BookOpen, Check, ChevronLeft, ChevronRight, CircleHelp, Clock3, Download, FileText, History, Home, RotateCcw, X} from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import {
+  ArrowLeft, BookOpen, Check, CheckCircle2, ChevronLeft, ChevronRight,
+  Circle, CircleHelp, Clock3, Download, FileText, History, Minus, Plus,
+  RotateCcw, Trash2, X,
+} from 'lucide-react';
 import quizzes from './quizzes.json';
 import './style.css';
 
-const names=['Custos','Riscos','Comunicação','Qualidade','Aquisições'];
-const key='gpti-simulados-v1';
-function readSaved(){try{return JSON.parse(localStorage.getItem(key))||{attempts:[]}}catch{return{attempts:[]}}}
-function App(){
- const [saved,setSaved]=useState(readSaved);
- const [screen,setScreen]=useState('home');
- const [quiz,setQuiz]=useState(null);
- const [attempt,setAttempt]=useState(null);
- const [mode,setMode]=useState('immediate');
- const [index,setIndex]=useState(0);
- const [selected,setSelected]=useState({});
- const [showHistory,setShowHistory]=useState(false);
- useEffect(()=>localStorage.setItem(key,JSON.stringify(saved)),[saved]);
- const start=(qi,exam=false)=>{let questions;if(exam){questions=quizzes.flatMap((q,i)=>q.questions.map(x=>({...x,topic:names[i]}))).sort(()=>Math.random()-.5).reduce((acc,q)=>{const c=acc.filter(x=>x.topic===q.topic).length;return c<5?[...acc,q]:acc},[])}else questions=quizzes[qi].questions.map(x=>({...x,topic:names[qi]}));setQuiz({id:exam?'exam':quizzes[qi].id,title:exam?'Simulado geral':quizzes[qi].title,questions});setAttempt(null);setSelected({});setIndex(0);setMode('immediate');setScreen('quiz')};
- const current=quiz?.questions[index];
- const answerKey=current?.answer?.toUpperCase();
- const done=attempt;
- const finish=()=>{const answers=quiz.questions.map(q=>({question:q,selected:selected[q.id]||null,correct:(selected[q.id]||'').toUpperCase()===q.answer.toUpperCase()}));const result={id:crypto.randomUUID(),title:quiz.title,mode,answers,score:answers.filter(a=>a.correct).length,total:answers.length,date:new Date().toISOString()};setAttempt(result);setSaved(prev=>({attempts:[result,...prev.attempts].slice(0,50)}));setScreen('result')};
- const exportResult=(res)=>{const rows=[['Simulado',res.title],['Data',new Date(res.date).toLocaleString('pt-BR')],['Nota',`${res.score}/${res.total}`],[],['Questão','Tema','Enunciado','Resposta da pessoa','Resultado','Resposta correta']];res.answers.forEach((a,i)=>rows.push([i+1,a.question.topic,a.question.text,a.selected?`${a.selected}) ${a.question.options.find(o=>o.key===a.selected)?.text}`:'Não respondida',a.correct?'Correta':'Incorreta',`${a.question.answer.toUpperCase()}) ${a.question.options.find(o=>o.key===a.question.answer.toUpperCase())?.text}`]));const csv='\ufeff'+rows.map(r=>r.map(v=>`"${String(v??'').replaceAll('"','""')}"`).join(';')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download=`resultado-${res.title.toLowerCase().replaceAll(' ','-')}.csv`;a.click();URL.revokeObjectURL(a.href)};
- const back=()=>{setScreen('home');setQuiz(null);setAttempt(null)};
- return <div className="app"><header><button className="brand" onClick={back}><span className="brandmark"><BookOpen size={21}/></span><span>GPTI <b>|</b> Simulados</span></button><div className="saved"><span className="saved-dot"><Check size={12}/></span>Salvo neste navegador</div><button className="history-mobile" onClick={()=>setShowHistory(!showHistory)}><History size={18}/></button></header>
- <div className="layout"><aside><div className="aside-title">SEUS SIMULADOS</div>{quizzes.map((q,i)=><button key={q.id} className="navitem" onClick={()=>start(i)}><span className="navicon"><FileText size={17}/></span><span>{names[i]}</span><span className="navcount">25</span></button>)}<div className="aside-rule"/><button className="navitem exam-nav" onClick={()=>start(null,true)}><span className="navicon"><CircleHelp size={17}/></span><span>Simulado geral</span></button><div className="aside-foot"><span className="avatar">G</span><span><b>Gerência de Projetos</b><small>Facom · UFU</small></span></div></aside>
- <main>{screen==='home'&&<><div className="welcome"><div><div className="welcome-mark"><BookOpen size={20}/></div><h1>Pronto para revisar?</h1><p>Escolha um simulado e avance questão por questão. Seu progresso fica guardado neste navegador.</p></div><div className="welcome-stat"><span>QUESTÕES DISPONÍVEIS</span><b>125</b><small>em 5 temas</small></div></div><div className="section-head"><div><h2>Escolha um simulado</h2><p>25 questões por tema · gabarito baseado no material enviado</p></div><button className="text-button" onClick={()=>setShowHistory(!showHistory)}><History size={16}/> Histórico ({saved.attempts.length})</button></div><div className="quiz-list">{quizzes.map((q,i)=><button className="quiz-row" key={q.id} onClick={()=>start(i)}><span className={`topic-icon tone-${i}`}><FileText size={19}/></span><span className="quiz-info"><b>{names[i]}</b><small>{q.title}</small></span><span className="question-count">25 questões</span><ChevronRight className="row-arrow" size={19}/></button>)}</div><button className="exam-banner" onClick={()=>start(null,true)}><span className="exam-symbol"><CircleHelp size={22}/></span><span><b>Simulado geral</b><small>Prova com 25 questões aleatórias · 5 de cada tema</small></span><span className="exam-action">Começar <ChevronRight size={16}/></span></button>{showHistory&&<HistoryPanel attempts={saved.attempts} onExport={exportResult}/>}</>}
- {screen==='quiz'&&current&&<><div className="crumb"><button onClick={back}><ChevronLeft size={16}/> Simulados</button><span>/</span>{quiz.title}</div><div className="quiz-title"><div><h1>{quiz.id==='exam'?'Simulado geral':`Simulado — ${names[quizzes.findIndex(q=>q.id===quiz.id)]}`}</h1><p>{quiz.id==='exam'?'5 questões aleatórias de cada tema, em ordem embaralhada.':quiz.title}</p></div><span className="progress-label"><Clock3 size={15}/>{mode==='immediate'?'Modo de revisão':'Modo prova'}</span></div><div className="mode-picker"><span>Correção</span><button className={mode==='immediate'?'mode active':'mode'} onClick={()=>setMode('immediate')}><span className="radio-dot"/>Na hora</button><button className={mode==='final'?'mode active':'mode'} onClick={()=>setMode('final')}><span className="radio-dot"/>Ao terminar</button></div><div className="progress-line"><div><b>Questão {index+1} <span>de {quiz.questions.length}</span></b><span>{Math.round((index+1)/quiz.questions.length*100)}%</span></div><div className="track"><i style={{width:`${(index+1)/quiz.questions.length*100}%`}}/></div></div><article className="question-card"><div className="question-meta"><span>{current.topic}</span><span>{String(index+1).padStart(2,'0')} / {quiz.questions.length}</span></div><h2>{current.text}</h2><div className="options">{current.options.map(o=>{const isSelected=selected[current.id]===o.key;const revealed=mode==='immediate'&&!!selected[current.id];const isCorrect=o.key===answerKey;return <button key={o.key} className={`option ${isSelected?'chosen':''} ${revealed&&isCorrect?'correct':''} ${revealed&&isSelected&&!isCorrect?'wrong':''}`} onClick={()=>setSelected(p=>({...p,[current.id]:o.key}))}><span className="option-letter">{o.key}</span><span>{o.text}</span>{revealed&&isCorrect&&<Check className="option-status" size={17}/ >}{revealed&&isSelected&&!isCorrect&&<X className="option-status" size={17}/>}</button>})}</div>{mode==='immediate'&&selected[current.id]&&<div className={`feedback ${selected[current.id]===answerKey?'good':'bad'}`}>{selected[current.id]===answerKey?<><Check size={17}/>Resposta correta</>:<><X size={17}/>Resposta incorreta · correta: {answerKey}</>}</div>}<div className="question-footer"><span>{Object.keys(selected).length} de {quiz.questions.length} respondidas</span><div>{index>0&&<button className="secondary-btn" onClick={()=>setIndex(index-1)}><ChevronLeft size={16}/>Anterior</button>}{index<quiz.questions.length-1?<button className="primary-btn" onClick={()=>setIndex(index+1)}>Próxima questão<ChevronRight size={17}/></button>:<button className="primary-btn" onClick={finish}>Finalizar simulado<Check size={17}/></button>}</div></div></article></>}
- {screen==='result'&&attempt&&<div className="result-wrap"><div className="crumb"><button onClick={back}><ChevronLeft size={16}/> Simulados</button><span>/</span>Resultado</div><div className="result-header"><div className="result-badge"><Check size={24}/></div><div><h1>Simulado concluído</h1><p>{attempt.title} · {new Date(attempt.date).toLocaleString('pt-BR')}</p></div></div><div className="score-strip"><div><small>NOTA</small><b>{attempt.score}<span> / {attempt.total}</span></b></div><div><small>APROVEITAMENTO</small><b>{Math.round(attempt.score/attempt.total*100)}<span>%</span></b></div><button className="primary-btn" onClick={()=>exportResult(attempt)}><Download size={17}/>Exportar respostas</button></div><div className="review-list"><h2>Revisão das respostas</h2>{attempt.answers.map((a,i)=><div className="review-item" key={a.question.id}><div className="review-qhead"><span>Questão {i+1} · {a.question.topic}</span><b className={a.correct?'is-correct':'is-wrong'}>{a.correct?'Correta':'Incorreta'}</b></div><p>{a.question.text}</p><div className="review-answer">Sua resposta: <b>{a.selected||'Em branco'}</b>{!a.correct&&<span> · Correta: <b>{a.question.answer.toUpperCase()}</b></span>}</div></div>)}</div><button className="secondary-btn restart" onClick={()=>start(0)}><RotateCcw size={16}/>Voltar aos simulados</button></div>}</main></div></div>
-}
-function HistoryPanel({attempts,onExport}){return <section className="history-panel"><div className="history-head"><div><h2>Histórico local</h2><p>As tentativas ficam salvas somente neste navegador.</p></div></div>{attempts.length===0?<div className="empty-history">Ainda não há tentativas salvas.</div>:attempts.slice(0,8).map(a=><div className="history-row" key={a.id}><span className="history-check"><Check size={15}/></span><span className="history-detail"><b>{a.title}</b><small>{new Date(a.date).toLocaleString('pt-BR')}</small></span><b className="history-score">{a.score}/{a.total}</b><button title="Exportar" onClick={()=>onExport(a)}><Download size={16}/></button></div>)}</section>}
+const topicNames = ['Custos', 'Riscos', 'Comunicação', 'Qualidade', 'Aquisições'];
+const storageKey = 'gpti-simulados-v1';
+const emptySaved = { attempts: [] };
 
-createRoot(document.getElementById('root')).render(<App/>);
+function readSaved() {
+  try {
+    const value = JSON.parse(localStorage.getItem(storageKey));
+    return value && Array.isArray(value.attempts) ? value : emptySaved;
+  } catch {
+    return emptySaved;
+  }
+}
+
+function shuffle(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+function App() {
+  const [saved, setSaved] = useState(readSaved);
+  const [screen, setScreen] = useState('home');
+  const [quiz, setQuiz] = useState(null);
+  const [attempt, setAttempt] = useState(null);
+  const [mode, setMode] = useState('immediate');
+  const [index, setIndex] = useState(0);
+  const [selected, setSelected] = useState({});
+  const [examCounts, setExamCounts] = useState(topicNames.map(() => 5));
+  const [clearDialog, setClearDialog] = useState(false);
+  const [exitDialog, setExitDialog] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+    } catch {
+      // The app still works for the current session when browser storage is unavailable.
+    }
+  }, [saved]);
+
+  const current = quiz?.questions[index];
+  const answeredCount = Object.keys(selected).length;
+  const unansweredIndexes = useMemo(
+    () => quiz?.questions.map((question, questionIndex) => (selected[question.id] ? -1 : questionIndex)).filter((n) => n >= 0) ?? [],
+    [quiz, selected],
+  );
+  const totalExamQuestions = examCounts.reduce((sum, count) => sum + count, 0);
+
+  const goHome = () => {
+    setScreen('home');
+    setQuiz(null);
+    setAttempt(null);
+    setSelected({});
+    setIndex(0);
+    setExitDialog(false);
+  };
+
+  const begin = (title, id, questions) => {
+    setQuiz({ title, id, questions });
+    setAttempt(null);
+    setSelected({});
+    setIndex(0);
+    setMode('immediate');
+    setScreen('quiz');
+  };
+
+  const startTopic = (quizIndex) => {
+    const questionSet = quizzes[quizIndex].questions.map((question) => ({
+      ...question,
+      topic: topicNames[quizIndex],
+    }));
+    begin(quizzes[quizIndex].title, quizzes[quizIndex].id, questionSet);
+  };
+
+  const startExam = () => {
+    if (totalExamQuestions < 1) return;
+    const questions = quizzes.flatMap((set, quizIndex) => {
+      const picked = shuffle(set.questions).slice(0, examCounts[quizIndex]);
+      return picked.map((question) => ({ ...question, topic: topicNames[quizIndex] }));
+    });
+    begin('Simulado geral', 'exam', shuffle(questions));
+  };
+
+  const chooseAnswer = (questionId, optionKey) => {
+    setSelected((previous) => ({ ...previous, [questionId]: optionKey }));
+  };
+
+  const finalize = () => {
+    const answers = quiz.questions.map((question) => ({
+      question,
+      selected: selected[question.id] || null,
+      correct: (selected[question.id] || '').toUpperCase() === question.answer.toUpperCase(),
+    }));
+    const result = {
+      id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`,
+      title: quiz.title,
+      mode,
+      answers,
+      score: answers.filter((answer) => answer.correct).length,
+      total: answers.length,
+      date: new Date().toISOString(),
+    };
+    setAttempt(result);
+    setSaved((previous) => ({ attempts: [result, ...previous.attempts].slice(0, 100) }));
+    setScreen('result');
+  };
+
+  const exportResult = (result) => {
+    const rows = [
+      ['Simulado', result.title],
+      ['Data', new Date(result.date).toLocaleString('pt-BR')],
+      ['Nota', `${result.score}/${result.total}`],
+      [],
+      ['Questão', 'Tema', 'Enunciado', 'Resposta da pessoa', 'Resultado', 'Resposta correta'],
+    ];
+    result.answers.forEach((answer, answerIndex) => {
+      const correctOption = answer.question.options.find((option) => option.key === answer.question.answer.toUpperCase());
+      const selectedOption = answer.question.options.find((option) => option.key === answer.selected);
+      rows.push([
+        answerIndex + 1,
+        answer.question.topic,
+        answer.question.text,
+        selectedOption ? `${selectedOption.key}) ${selectedOption.text}` : 'Não respondida',
+        answer.correct ? 'Correta' : 'Incorreta',
+        correctOption ? `${correctOption.key}) ${correctOption.text}` : answer.question.answer.toUpperCase(),
+      ]);
+    });
+    const csv = '\ufeff' + rows.map((row) => row.map((value) => `"${String(value ?? '').replaceAll('"', '""')}"`).join(';')).join('\n');
+    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `resultado-${result.title.toLowerCase().replaceAll(' ', '-')}.csv`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const openSavedAttempt = (result) => {
+    setAttempt(result);
+    setScreen('result');
+  };
+
+  const isSolving = screen === 'quiz' || screen === 'review';
+
+  return (
+    <div className={`app ${isSolving ? 'app-solving' : ''}`}>
+      {!isSolving && (
+        <AppHeader onHome={goHome} onHistory={() => setScreen('history')} attemptCount={saved.attempts.length} />
+      )}
+      <div className={`layout ${isSolving ? 'layout-solving' : ''}`}>
+        {!isSolving && <Sidebar onTopic={startTopic} onExam={() => setScreen('examSetup')} onHistory={() => setScreen('history')} />}
+        <main className={isSolving ? 'main-solving' : ''}>
+          {screen === 'home' && (
+            <HomePage
+              attempts={saved.attempts}
+              onTopic={startTopic}
+              onExam={() => setScreen('examSetup')}
+              onHistory={() => setScreen('history')}
+            />
+          )}
+          {screen === 'examSetup' && (
+            <ExamSetup
+              counts={examCounts}
+              total={totalExamQuestions}
+              onChange={(topicIndex, value) => setExamCounts((previous) => previous.map((count, i) => i === topicIndex ? value : count))}
+              onBack={goHome}
+              onStart={startExam}
+            />
+          )}
+          {screen === 'history' && (
+            <HistoryPage
+              attempts={saved.attempts}
+              onBack={goHome}
+              onClear={() => setClearDialog(true)}
+              onExport={exportResult}
+              onOpen={openSavedAttempt}
+            />
+          )}
+          {screen === 'quiz' && current && (
+            <QuizPage
+              quiz={quiz}
+              current={current}
+              index={index}
+              selected={selected}
+              mode={mode}
+              answeredCount={answeredCount}
+              onAnswer={chooseAnswer}
+              onMode={setMode}
+              onIndex={setIndex}
+              onReview={() => setScreen('review')}
+              onExit={() => setExitDialog(true)}
+            />
+          )}
+          {screen === 'review' && quiz && (
+            <ReviewPage
+              quiz={quiz}
+              selected={selected}
+              index={index}
+              unansweredIndexes={unansweredIndexes}
+              onIndex={(questionIndex) => { setIndex(questionIndex); setScreen('quiz'); }}
+              onBack={() => setScreen('quiz')}
+              onFinish={finalize}
+            />
+          )}
+          {screen === 'result' && attempt && (
+            <ResultPage
+              attempt={attempt}
+              onBack={() => setScreen('history')}
+              onHome={goHome}
+              onExport={() => exportResult(attempt)}
+              onHistory={() => setScreen('history')}
+            />
+          )}
+        </main>
+      </div>
+      {clearDialog && (
+        <ConfirmDialog
+          title="Limpar histórico?"
+          description="Essa ação apaga todas as tentativas salvas neste navegador."
+          confirmText="Limpar histórico"
+          onCancel={() => setClearDialog(false)}
+          onConfirm={() => { setSaved({ attempts: [] }); setClearDialog(false); }}
+        />
+      )}
+      {exitDialog && (
+        <ConfirmDialog
+          title="Sair do simulado?"
+          description="As respostas desta tentativa ainda não foram salvas no histórico."
+          confirmText="Sair do simulado"
+          onCancel={() => setExitDialog(false)}
+          onConfirm={goHome}
+          icon="exit"
+        />
+      )}
+    </div>
+  );
+}
+
+function AppHeader({ onHome, onHistory, attemptCount }) {
+  return (
+    <header className="site-header">
+      <button className="brand" onClick={onHome} aria-label="Ir para o início">
+        <span className="brandmark"><BookOpen size={20} /></span>
+        <span>GPTI <b>|</b> Simulados</span>
+      </button>
+      <div className="header-actions">
+        <span className="saved-status"><span className="saved-dot"><Check size={11} /></span>Salvo neste navegador</span>
+        <button className="header-history" onClick={onHistory}><History size={16} /><span>Histórico</span><span className="header-count">{attemptCount}</span></button>
+      </div>
+    </header>
+  );
+}
+
+function Sidebar({ onTopic, onExam, onHistory }) {
+  return (
+    <aside className="sidebar">
+      <div className="aside-title">SEUS SIMULADOS</div>
+      {quizzes.map((quiz, i) => (
+        <button key={quiz.id} className="navitem" onClick={() => onTopic(i)}>
+          <span className={`navicon tone-text-${i}`}><FileText size={17} /></span><span>{topicNames[i]}</span><span className="navcount">25</span>
+        </button>
+      ))}
+      <div className="aside-rule" />
+      <button className="navitem exam-nav" onClick={onExam}><span className="navicon"><CircleHelp size={17} /></span><span>Simulado geral</span></button>
+      <button className="navitem history-nav" onClick={onHistory}><span className="navicon"><History size={17} /></span><span>Histórico</span></button>
+      <div className="aside-foot"><span className="avatar">G</span><span><b>Gerência de Projetos</b><small>Facom · UFU</small></span></div>
+    </aside>
+  );
+}
+
+function HomePage({ attempts, onTopic, onExam, onHistory }) {
+  return (
+    <>
+      <section className="welcome">
+        <div><div className="welcome-mark"><BookOpen size={20} /></div><h1>Pronto para revisar?</h1><p>Escolha um simulado e avance questão por questão. Seu progresso fica guardado neste navegador.</p></div>
+        <div className="welcome-stat"><span>QUESTÕES DISPONÍVEIS</span><b>125</b><small>em 5 temas</small></div>
+      </section>
+      <section className="section-head">
+        <div><h2>Escolha um simulado</h2><p>25 questões por tema · gabarito baseado no material enviado</p></div>
+        <button className="text-button" onClick={onHistory}><History size={16} /> Histórico ({attempts.length})</button>
+      </section>
+      <div className="quiz-list">
+        {quizzes.map((quiz, i) => (
+          <button className="quiz-row" key={quiz.id} onClick={() => onTopic(i)}>
+            <span className={`topic-icon tone-${i}`}><FileText size={19} /></span>
+            <span className="quiz-info"><b>{topicNames[i]}</b><small>{quiz.title}</small></span>
+            <span className="question-count">25 questões</span><ChevronRight className="row-arrow" size={19} />
+          </button>
+        ))}
+      </div>
+      <button className="exam-banner" onClick={onExam}>
+        <span className="exam-symbol"><CircleHelp size={22} /></span>
+        <span><b>Simulado geral</b><small>Monte a prova escolhendo quantas questões quer de cada tema.</small></span>
+        <span className="exam-action">Configurar <ChevronRight size={16} /></span>
+      </button>
+    </>
+  );
+}
+
+function PageHeading({ back, label, title, description }) {
+  return (
+    <div className="page-heading">
+      <button className="back-link" onClick={back}><ArrowLeft size={16} />{label}</button>
+      <h1>{title}</h1>
+      {description && <p>{description}</p>}
+    </div>
+  );
+}
+
+function HistoryPage({ attempts, onBack, onClear, onExport, onOpen }) {
+  const [filter, setFilter] = useState('all');
+  const visible = filter === 'all' ? attempts : attempts.filter((attempt) => attempt.answers.some((answer) => answer.question.topic === filter) || attempt.title.includes(filter));
+  return (
+    <section className="page-wrap history-page">
+      <PageHeading back={onBack} label="Início" title="Histórico de tentativas" description="As tentativas ficam guardadas somente neste navegador." />
+      <div className="history-toolbar">
+        <span>{attempts.length} {attempts.length === 1 ? 'tentativa salva' : 'tentativas salvas'}</span>
+        <div className="history-tools">
+          <select aria-label="Filtrar tentativas" value={filter} onChange={(event) => setFilter(event.target.value)}>
+            <option value="all">Todos os simulados</option>
+            {topicNames.map((name) => <option key={name} value={name}>{name}</option>)}
+          </select>
+          <button className="danger-quiet" onClick={onClear} disabled={attempts.length === 0}><Trash2 size={15} />Limpar histórico</button>
+        </div>
+      </div>
+      {visible.length === 0 ? (
+        <div className="history-empty"><span className="empty-icon"><History size={22} /></span><b>{attempts.length === 0 ? 'Nenhuma tentativa salva ainda' : 'Nenhuma tentativa neste filtro'}</b><p>{attempts.length === 0 ? 'Quando terminar um simulado, a nota e as respostas aparecem aqui.' : 'Escolha outro filtro para ver suas tentativas.'}</p></div>
+      ) : (
+        <div className="history-list">
+          {visible.map((attempt) => (
+            <article className="history-card" key={attempt.id}>
+              <button className="history-card-main" onClick={() => onOpen(attempt)}>
+                <span className={`history-grade ${attempt.score / attempt.total >= 0.7 ? 'grade-good' : 'grade-neutral'}`}><b>{attempt.score}</b><small>/{attempt.total}</small></span>
+                <span className="history-detail"><b>{attempt.title}</b><small>{new Date(attempt.date).toLocaleString('pt-BR')}</small></span>
+                <span className="history-percent">{Math.round(attempt.score / attempt.total * 100)}%</span>
+                <ChevronRight size={17} className="row-arrow" />
+              </button>
+              <button className="history-export" onClick={() => onExport(attempt)}><Download size={15} />Exportar</button>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function ExamSetup({ counts, total, onChange, onBack, onStart }) {
+  return (
+    <section className="page-wrap exam-setup">
+      <PageHeading back={onBack} label="Início" title="Monte seu simulado geral" description="Escolha quantas questões sortear de cada tema. Cada tema tem até 25 questões disponíveis." />
+      <div className="count-list">
+        {topicNames.map((name, i) => (
+          <div className="count-row" key={name}>
+            <span className={`topic-icon tone-${i}`}><FileText size={18} /></span>
+            <span className="count-topic"><b>{name}</b><small>Máximo: 25 questões</small></span>
+            <div className="stepper" aria-label={`${name}: ${counts[i]} questões`}>
+              <button onClick={() => onChange(i, Math.max(0, counts[i] - 1))} aria-label={`Diminuir questões de ${name}`} disabled={counts[i] === 0}><Minus size={16} /></button>
+              <input aria-label={`Quantidade de questões de ${name}`} type="number" min="0" max="25" value={counts[i]} onChange={(event) => onChange(i, Math.min(25, Math.max(0, Number(event.target.value) || 0)))} />
+              <button onClick={() => onChange(i, Math.min(25, counts[i] + 1))} aria-label={`Aumentar questões de ${name}`} disabled={counts[i] === 25}><Plus size={16} /></button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="exam-summary"><span><b>{total}</b> {total === 1 ? 'questão selecionada' : 'questões selecionadas'}</span><small>As questões serão embaralhadas e escolhidas sem repetição dentro de cada tema.</small></div>
+      <div className="setup-actions"><button className="secondary-btn" onClick={() => topicNames.forEach((_, i) => onChange(i, 5))}><RotateCcw size={15} />Redefinir para 5 por tema</button><button className="primary-btn" disabled={total === 0} onClick={onStart}>Começar simulado<ChevronRight size={17} /></button></div>
+      {total === 0 && <p className="inline-error">Selecione pelo menos uma questão para começar.</p>}
+    </section>
+  );
+}
+
+function SolvingHeader({ quiz, current, index, total, onExit }) {
+  const percent = Math.round(((index + 1) / total) * 100);
+  return (
+    <div className="solving-header">
+      <button className="solving-exit" onClick={onExit}><ChevronLeft size={18} /><span>Sair do simulado</span></button>
+      <div className="solving-title-row"><div><h1>{quiz.id === 'exam' ? quiz.title : `Simulado — ${current.topic}`}</h1><p>{current.topic}</p></div><span className="solving-clock"><Clock3 size={14} />{percent}%</span></div>
+      <div className="solving-progress"><div><b>Questão {index + 1} <span>de {total}</span></b><span>{percent}%</span></div><div className="track"><i style={{ width: `${percent}%` }} /></div></div>
+    </div>
+  );
+}
+
+function QuestionDock({ questions, selected, index, onIndex, onReview, onFinish, answeredCount, reviewMode = false }) {
+  const blankCount = questions.length - answeredCount;
+  return (
+    <div className="question-dock">
+      <div className="question-map-head"><span className="map-caption">Questões</span><span className={blankCount ? 'blank-count' : 'complete-count'}>{blankCount ? `${blankCount} em branco` : 'Todas respondidas'}</span></div>
+      <div className="question-map" aria-label="Navegação das questões">
+        {questions.map((question, questionIndex) => {
+          const isAnswered = Boolean(selected[question.id]);
+          return <button key={question.id} className={`question-chip ${questionIndex === index ? 'current' : ''} ${isAnswered ? 'answered' : 'blank'}`} aria-label={`Questão ${questionIndex + 1}, ${isAnswered ? 'respondida' : 'em branco'}`} aria-current={questionIndex === index ? 'step' : undefined} onClick={() => onIndex(questionIndex)}>{questionIndex + 1}</button>;
+        })}
+      </div>
+      <div className="dock-actions">
+        {reviewMode ? <>
+          <button className="secondary-btn" onClick={onReview}><ChevronLeft size={16} /><span>Continuar respondendo</span></button>
+          <button className="primary-btn" onClick={onFinish}><span>Finalizar simulado</span><Check size={17} /></button>
+        </> : <>
+          <button className="secondary-btn" onClick={() => onIndex(Math.max(0, index - 1))} disabled={index === 0}><ChevronLeft size={16} /><span>Anterior</span></button>
+          {index < questions.length - 1
+            ? <button className="primary-btn" onClick={() => onIndex(index + 1)}><span>Próxima</span><ChevronRight size={17} /></button>
+            : <button className="primary-btn" onClick={onReview}><span>Revisar respostas</span><Check size={17} /></button>}
+        </>}
+      </div>
+    </div>
+  );
+}
+
+function QuizPage({ quiz, current, index, selected, mode, answeredCount, onAnswer, onMode, onIndex, onReview, onExit }) {
+  const answerKey = current.answer.toUpperCase();
+  return (
+    <div className="solve-page">
+      <SolvingHeader quiz={quiz} current={current} index={index} total={quiz.questions.length} onExit={onExit} />
+      <div className="solve-mode"><span>Correção</span><button className={mode === 'immediate' ? 'mode active' : 'mode'} onClick={() => onMode('immediate')}><span className="radio-dot" />Na hora</button><button className={mode === 'final' ? 'mode active' : 'mode'} onClick={() => onMode('final')}><span className="radio-dot" />No final</button></div>
+      <article className="question-card">
+        <div className="question-meta"><span>{current.topic}</span><span>{String(index + 1).padStart(2, '0')} / {quiz.questions.length}</span></div>
+        <h2>{current.text}</h2>
+        <div className="options">
+          {current.options.map((option) => {
+            const isSelected = selected[current.id] === option.key;
+            const revealed = mode === 'immediate' && Boolean(selected[current.id]);
+            const isCorrect = option.key === answerKey;
+            return (
+              <button key={option.key} className={`option ${isSelected ? 'chosen' : ''} ${revealed && isCorrect ? 'correct' : ''} ${revealed && isSelected && !isCorrect ? 'wrong' : ''}`} onClick={() => onAnswer(current.id, option.key)}>
+                <span className="option-letter">{option.key}</span><span>{option.text}</span>
+                {revealed && isCorrect && <Check className="option-status" size={17} />}
+                {revealed && isSelected && !isCorrect && <X className="option-status" size={17} />}
+              </button>
+            );
+          })}
+        </div>
+        {mode === 'immediate' && selected[current.id] && (
+          <div className={`feedback ${selected[current.id] === answerKey ? 'good' : 'bad'}`}>
+            {selected[current.id] === answerKey ? <><Check size={17} />Resposta correta</> : <><X size={17} />Resposta incorreta · correta: {answerKey}</>}
+          </div>
+        )}
+      </article>
+      <QuestionDock questions={quiz.questions} selected={selected} index={index} onIndex={onIndex} onReview={onReview} answeredCount={answeredCount} />
+    </div>
+  );
+}
+
+function ReviewPage({ quiz, selected, index, unansweredIndexes, onIndex, onBack, onFinish }) {
+  const blanks = unansweredIndexes.length;
+  return (
+    <div className="solve-page review-page">
+      <div className="solving-header review-top">
+        <button className="solving-exit" onClick={onBack}><ChevronLeft size={18} /><span>Voltar às questões</span></button>
+        <div className="solving-title-row"><div><h1>Revisar respostas</h1><p>{quiz.title}</p></div><span className={blanks ? 'review-badge pending' : 'review-badge complete'}>{blanks ? `${blanks} em branco` : 'Completo'}</span></div>
+      </div>
+      <section className="review-summary-card">
+        {blanks === 0 ? <><span className="review-summary-icon complete"><CheckCircle2 size={22} /></span><h2>Todas as questões foram respondidas</h2><p>Você pode finalizar o simulado ou voltar para revisar suas respostas.</p></> : <><span className="review-summary-icon pending"><CircleHelp size={22} /></span><h2>{blanks} {blanks === 1 ? 'questão sem resposta' : 'questões sem resposta'}</h2><p>Toque em uma questão para voltar diretamente a ela. Você também pode localizar as em branco na navegação inferior.</p></>}
+      </section>
+      {blanks > 0 && (
+        <section className="blank-list"><h3>Responda antes de concluir</h3>{unansweredIndexes.map((questionIndex) => <button key={quiz.questions[questionIndex].id} onClick={() => onIndex(questionIndex)}><span className="blank-number">{questionIndex + 1}</span><span><b>{quiz.questions[questionIndex].topic}</b><small>{quiz.questions[questionIndex].text}</small></span><ChevronRight size={17} /></button>)}</section>
+      )}
+      {blanks === 0 && <section className="review-checklist"><h3>Resumo da tentativa</h3><p><CheckCircle2 size={16} />{quiz.questions.length} questões respondidas</p><p><Circle size={16} />Correção após finalizar</p></section>}
+      <QuestionDock questions={quiz.questions} selected={selected} index={index} onIndex={onIndex} onReview={onBack} onFinish={onFinish} answeredCount={quiz.questions.length - blanks} reviewMode />
+    </div>
+  );
+}
+
+function ResultPage({ attempt, onBack, onHome, onExport, onHistory }) {
+  return (
+    <div className="result-wrap page-wrap">
+      <PageHeading back={onBack} label="Histórico" title="Resultado do simulado" description={`${attempt.title} · ${new Date(attempt.date).toLocaleString('pt-BR')}`} />
+      <div className="score-strip"><div><small>NOTA</small><b>{attempt.score}<span> / {attempt.total}</span></b></div><div><small>APROVEITAMENTO</small><b>{Math.round(attempt.score / attempt.total * 100)}<span>%</span></b></div><button className="primary-btn" onClick={onExport}><Download size={17} />Exportar respostas</button></div>
+      <div className="review-list"><h2>Revisão das respostas</h2>{attempt.answers.map((answer, i) => <article className="review-item" key={`${answer.question.id}-${i}`}><div className="review-qhead"><span>Questão {i + 1} · {answer.question.topic}</span><b className={answer.correct ? 'is-correct' : 'is-wrong'}>{answer.correct ? 'Correta' : answer.selected ? 'Incorreta' : 'Em branco'}</b></div><p>{answer.question.text}</p><div className="review-answer">Sua resposta: <b>{answer.selected || 'Em branco'}</b>{!answer.correct && <span> · Correta: <b>{answer.question.answer.toUpperCase()}</b></span>}</div></article>)}</div>
+      <div className="result-actions"><button className="secondary-btn" onClick={onHistory}><History size={16} />Voltar ao histórico</button><button className="primary-btn" onClick={onHome}>Início<ChevronRight size={16} /></button></div>
+    </div>
+  );
+}
+
+function ConfirmDialog({ title, description, confirmText, onCancel, onConfirm, icon = 'trash' }) {
+  return (
+    <div className="dialog-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onCancel(); }}>
+      <section className="confirm-dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <button className="dialog-close" onClick={onCancel} aria-label="Fechar"><X size={18} /></button>
+        <span className="dialog-icon">{icon === 'exit' ? <ArrowLeft size={19} /> : <Trash2 size={19} />}</span><h2 id="dialog-title">{title}</h2><p id="dialog-description">{description}</p>
+        <div className="dialog-actions"><button className="secondary-btn" onClick={onCancel}>Cancelar</button><button className="danger-btn" onClick={onConfirm}>{confirmText}</button></div>
+      </section>
+    </div>
+  );
+}
+
+createRoot(document.getElementById('root')).render(<App />);
