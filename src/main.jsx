@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
-  ArrowLeft, BookOpen, Check, CheckCircle2, ChevronLeft, ChevronRight,
+  ArrowLeft, BarChart3, BookOpen, Check, CheckCircle2, ChevronLeft, ChevronRight,
   Circle, CircleHelp, Clock3, Download, FileText, History, Minus, Plus,
   RotateCcw, Trash2, X,
 } from 'lucide-react';
@@ -237,7 +237,7 @@ function App() {
         <AppHeader onHome={goHome} onHistory={() => setScreen('history')} attemptCount={saved.attempts.length} />
       )}
       <div className={`layout ${isSolving ? 'layout-solving' : ''}`}>
-        {!isSolving && <Sidebar onTopic={startTopic} onExam={openExamSetup} onHistory={() => setScreen('history')} />}
+        {!isSolving && <Sidebar onTopic={startTopic} onExam={openExamSetup} onHistory={() => setScreen('history')} onStats={() => setScreen('stats')} />}
         <main className={isSolving ? 'main-solving' : ''}>
           {screen === 'home' && (
             <HomePage
@@ -258,6 +258,7 @@ function App() {
               onStart={startExam}
             />
           )}
+          {screen === 'stats' && <StatsPage attempts={saved.attempts} onBack={goHome} />}
           {screen === 'history' && (
             <HistoryPage
               attempts={saved.attempts}
@@ -374,7 +375,7 @@ function AppHeader({ onHome, onHistory, attemptCount }) {
   );
 }
 
-function Sidebar({ onTopic, onExam, onHistory }) {
+function Sidebar({ onTopic, onExam, onHistory, onStats }) {
   return (
     <aside className="sidebar">
       <div className="aside-title">SEUS SIMULADOS</div>
@@ -386,6 +387,7 @@ function Sidebar({ onTopic, onExam, onHistory }) {
       <div className="aside-rule" />
       <button className="navitem exam-nav" onClick={onExam}><span className="navicon"><CircleHelp size={17} /></span><span>Simulado geral</span></button>
       <button className="navitem history-nav" onClick={onHistory}><span className="navicon"><History size={17} /></span><span>Histórico</span></button>
+      <button className="navitem" onClick={onStats}><span className="navicon"><BarChart3 size={17} /></span><span>Estatísticas</span></button>
       <div className="aside-foot"><span className="avatar">G</span><span><b>Gerência de Projetos</b><small>Facom · UFU</small></span></div>
     </aside>
   );
@@ -437,6 +439,63 @@ function PageHeading({ back, label, title, description }) {
       <h1>{title}</h1>
       {description && <p>{description}</p>}
     </div>
+  );
+}
+
+function StatsPage({ attempts, onBack }) {
+  const [filter, setFilter] = useState('all');
+  const filteredAnswers = attempts.flatMap((attempt) => attempt.answers
+    .filter((answer) => filter === 'all' || answer.question.topic === filter)
+    .map((answer) => ({ ...answer, attemptTitle: attempt.title, attemptDate: attempt.date })));
+  const questionMap = new Map();
+  filteredAnswers.forEach((answer) => {
+    const question = answer.question;
+    const current = questionMap.get(question.id) || { question, correct: 0, errors: 0, blank: 0, appearances: 0 };
+    current.appearances += 1;
+    if (!answer.selected) current.blank += 1;
+    else if (answer.correct) current.correct += 1;
+    else current.errors += 1;
+    questionMap.set(question.id, current);
+  });
+  const questions = [...questionMap.values()].sort((a, b) => b.errors - a.errors || (b.errors / Math.max(1, b.errors + b.correct)) - (a.errors / Math.max(1, a.errors + a.correct)) || a.question.number - b.question.number);
+  const difficult = questions.filter((item) => item.errors > 0);
+  const answered = filteredAnswers.filter((answer) => answer.selected).length;
+  const correct = filteredAnswers.filter((answer) => answer.selected && answer.correct).length;
+  const relevantAttempts = attempts.filter((attempt) => filter === 'all' || attempt.answers.some((answer) => answer.question.topic === filter)).length;
+
+  return (
+    <section className="page-wrap stats-page">
+      <PageHeading back={onBack} label="Início" title="Estatísticas de respostas" description="Veja quais questões você mais erra com base nas tentativas salvas neste navegador." />
+      <div className="stats-toolbar">
+        <label htmlFor="stats-topic">Tema</label>
+        <select id="stats-topic" value={filter} onChange={(event) => setFilter(event.target.value)}>
+          <option value="all">Todos os temas</option>
+          {topicNames.map((name) => <option key={name} value={name}>{name}</option>)}
+        </select>
+      </div>
+      <div className="stats-summary">
+        <article><small>TENTATIVAS NO FILTRO</small><b>{relevantAttempts}</b></article>
+        <article><small>RESPOSTAS AVALIADAS</small><b>{answered}</b></article>
+        <article><small>APROVEITAMENTO</small><b>{answered ? Math.round(correct / answered * 100) : 0}%</b></article>
+      </div>
+      {attempts.length === 0 ? (
+        <div className="history-empty"><span className="empty-icon"><BarChart3 size={22} /></span><b>Sem dados para analisar</b><p>Finalize um simulado para ver suas estatísticas aqui.</p></div>
+      ) : difficult.length === 0 ? (
+        <div className="history-empty"><span className="empty-icon"><CheckCircle2 size={22} /></span><b>Nenhum erro neste filtro</b><p>{filteredAnswers.length ? 'Até agora, você acertou todas as questões respondidas neste filtro.' : 'Não há tentativas salvas para este tema.'}</p></div>
+      ) : (
+        <div className="stats-question-list">
+          <div className="stats-list-heading"><div><h2>Questões para revisar</h2><p>Ordenadas pelo número de erros acumulados.</p></div><span>{difficult.length} {difficult.length === 1 ? 'questão' : 'questões'}</span></div>
+          {difficult.map(({ question, correct: hits, errors, blank, appearances }) => (
+            <article className="stats-question" key={question.id}>
+              <div className="stats-question-top"><span>{question.topic} · Questão {question.number}</span><b>{errors} {errors === 1 ? 'erro' : 'erros'}</b></div>
+              <p>{question.text}</p>
+              <div className="stats-metrics"><span>Erros <b>{errors}</b></span><span>Acertos <b>{hits}</b></span><span>Em branco <b>{blank}</b></span><span>Aparições <b>{appearances}</b></span><span>Taxa de erro <b>{Math.round(errors / Math.max(1, errors + hits) * 100)}%</b></span></div>
+              <details className="stats-answer"><summary>Revisar resposta correta</summary><p>{question.answer.toUpperCase()} — {question.options.find((option) => option.key === question.answer.toUpperCase())?.text}</p></details>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
   );
 }
 
