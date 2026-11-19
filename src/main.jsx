@@ -10,12 +10,14 @@ import './style.css';
 
 const topicNames = ['Custos', 'Riscos', 'Comunicação', 'Qualidade', 'Aquisições'];
 const storageKey = 'gpti-simulados-v1';
-const emptySaved = { attempts: [] };
+const emptySaved = { attempts: [], drafts: {}, correctionPreference: null };
 
 function readSaved() {
   try {
     const value = JSON.parse(localStorage.getItem(storageKey));
-    return value && Array.isArray(value.attempts) ? value : emptySaved;
+    return value && Array.isArray(value.attempts)
+      ? { ...emptySaved, ...value, drafts: value.drafts || {} }
+      : emptySaved;
   } catch {
     return emptySaved;
   }
@@ -41,6 +43,9 @@ function App() {
   const [examCounts, setExamCounts] = useState(topicNames.map(() => 5));
   const [clearDialog, setClearDialog] = useState(false);
   const [exitDialog, setExitDialog] = useState(false);
+  const [draftPrompt, setDraftPrompt] = useState(null);
+  const [correctionPrompt, setCorrectionPrompt] = useState(false);
+  const [rememberCorrection, setRememberCorrection] = useState(false);
 
   useEffect(() => {
     try {
@@ -49,6 +54,15 @@ function App() {
       // The app still works for the current session when browser storage is unavailable.
     }
   }, [saved]);
+
+  useEffect(() => {
+    if (!quiz || !['quiz', 'review'].includes(screen)) return;
+    const draft = { quiz, selected, index, mode, updatedAt: new Date().toISOString() };
+    setSaved((previous) => {
+      if (JSON.stringify(previous.drafts?.[quiz.id]) === JSON.stringify(draft)) return previous;
+      return { ...previous, drafts: { ...previous.drafts, [quiz.id]: draft } };
+    });
+  }, [quiz, selected, index, mode, screen]);
 
   const current = quiz?.questions[index];
   const answeredCount = Object.keys(selected).length;
@@ -67,13 +81,58 @@ function App() {
     setExitDialog(false);
   };
 
-  const begin = (title, id, questions) => {
+  const begin = (title, id, questions, initialMode = 'immediate') => {
     setQuiz({ title, id, questions });
     setAttempt(null);
     setSelected({});
     setIndex(0);
-    setMode('immediate');
+    setMode(initialMode);
     setScreen('quiz');
+    setCorrectionPrompt(!saved.correctionPreference);
+    setRememberCorrection(false);
+  };
+
+  const openQuiz = (title, id, questions) => {
+    const draft = saved.drafts?.[id];
+    if (draft) {
+      setDraftPrompt({ fresh: { title, id, questions }, draft });
+      return;
+    }
+    begin(title, id, questions, saved.correctionPreference || 'immediate');
+  };
+
+  const resumeDraft = () => {
+    const draft = draftPrompt?.draft;
+    if (!draft) return;
+    setQuiz(draft.quiz);
+    setSelected(draft.selected || {});
+    setIndex(draft.index || 0);
+    setMode(draft.mode || saved.correctionPreference || 'immediate');
+    setAttempt(null);
+    setScreen('quiz');
+    setDraftPrompt(null);
+  };
+
+  const startFresh = () => {
+    if (!draftPrompt) return;
+    const { title, id, questions } = draftPrompt.fresh;
+    setSaved((previous) => {
+      const drafts = { ...previous.drafts };
+      delete drafts[id];
+      return { ...previous, drafts };
+    });
+    setDraftPrompt(null);
+    begin(title, id, questions, saved.correctionPreference || 'immediate');
+  };
+
+  const chooseCorrection = (chosenMode, remember = rememberCorrection) => {
+    setMode(chosenMode);
+    if (remember) setSaved((previous) => ({ ...previous, correctionPreference: chosenMode }));
+    setCorrectionPrompt(false);
+  };
+
+  const updateCorrectionPreference = (chosenMode) => {
+    setSaved((previous) => ({ ...previous, correctionPreference: chosenMode }));
   };
 
   const startTopic = (quizIndex) => {
@@ -81,7 +140,7 @@ function App() {
       ...question,
       topic: topicNames[quizIndex],
     }));
-    begin(quizzes[quizIndex].title, quizzes[quizIndex].id, questionSet);
+    openQuiz(quizzes[quizIndex].title, quizzes[quizIndex].id, questionSet);
   };
 
   const startExam = () => {
@@ -90,7 +149,7 @@ function App() {
       const picked = shuffle(set.questions).slice(0, examCounts[quizIndex]);
       return picked.map((question) => ({ ...question, topic: topicNames[quizIndex] }));
     });
-    begin('Simulado geral', 'exam', shuffle(questions));
+    openQuiz('Simulado geral', 'exam', shuffle(questions));
   };
 
   const chooseAnswer = (questionId, optionKey) => {
@@ -113,7 +172,11 @@ function App() {
       date: new Date().toISOString(),
     };
     setAttempt(result);
-    setSaved((previous) => ({ attempts: [result, ...previous.attempts].slice(0, 100) }));
+    setSaved((previous) => {
+      const drafts = { ...previous.drafts };
+      delete drafts[quiz.id];
+      return { ...previous, attempts: [result, ...previous.attempts].slice(0, 100), drafts };
+    });
     setScreen('result');
   };
 
@@ -167,6 +230,8 @@ function App() {
               onTopic={startTopic}
               onExam={() => setScreen('examSetup')}
               onHistory={() => setScreen('history')}
+              correctionPreference={saved.correctionPreference}
+              onCorrectionPreference={updateCorrectionPreference}
             />
           )}
           {screen === 'examSetup' && (
@@ -205,6 +270,7 @@ function App() {
           {screen === 'review' && quiz && (
             <ReviewPage
               quiz={quiz}
+              mode={mode}
               selected={selected}
               index={index}
               unansweredIndexes={unansweredIndexes}
@@ -230,17 +296,34 @@ function App() {
           description="Essa ação apaga todas as tentativas salvas neste navegador."
           confirmText="Limpar histórico"
           onCancel={() => setClearDialog(false)}
-          onConfirm={() => { setSaved({ attempts: [] }); setClearDialog(false); }}
+          onConfirm={() => { setSaved((previous) => ({ ...previous, attempts: [] })); setClearDialog(false); }}
         />
       )}
       {exitDialog && (
         <ConfirmDialog
           title="Sair do simulado?"
-          description="As respostas desta tentativa ainda não foram salvas no histórico."
+          description="Seu progresso fica salvo como rascunho neste navegador. Você pode continuar de onde parou ao abrir o simulado novamente."
           confirmText="Sair do simulado"
           onCancel={() => setExitDialog(false)}
           onConfirm={goHome}
           icon="exit"
+        />
+      )}
+      {draftPrompt && (
+        <ResumeDraftDialog
+          title={draftPrompt.fresh.title}
+          answered={Object.keys(draftPrompt.draft.selected || {}).length}
+          total={draftPrompt.draft.quiz.questions.length}
+          onResume={resumeDraft}
+          onRestart={startFresh}
+          onCancel={() => setDraftPrompt(null)}
+        />
+      )}
+      {correctionPrompt && (
+        <CorrectionDialog
+          remember={rememberCorrection}
+          onRemember={setRememberCorrection}
+          onChoose={chooseCorrection}
         />
       )}
     </div>
@@ -279,7 +362,7 @@ function Sidebar({ onTopic, onExam, onHistory }) {
   );
 }
 
-function HomePage({ attempts, onTopic, onExam, onHistory }) {
+function HomePage({ attempts, onTopic, onExam, onHistory, correctionPreference, onCorrectionPreference }) {
   return (
     <>
       <section className="welcome">
@@ -304,6 +387,16 @@ function HomePage({ attempts, onTopic, onExam, onHistory }) {
         <span><b>Simulado geral</b><small>Monte a prova escolhendo quantas questões quer de cada tema.</small></span>
         <span className="exam-action">Configurar <ChevronRight size={16} /></span>
       </button>
+      <section className="correction-preference" aria-labelledby="correction-preference-title">
+        <div>
+          <h2 id="correction-preference-title">Padrão de correção</h2>
+          <p>{correctionPreference ? 'Essa opção será usada automaticamente ao iniciar os próximos simulados.' : 'Escolha uma opção para já começar os próximos simulados com essa preferência.'}</p>
+        </div>
+        <div className="preference-options" role="group" aria-label="Padrão de correção">
+          <button className={correctionPreference === 'immediate' ? 'mode active' : 'mode'} onClick={() => onCorrectionPreference('immediate')}><span className="radio-dot" />Na hora</button>
+          <button className={correctionPreference === 'final' ? 'mode active' : 'mode'} onClick={() => onCorrectionPreference('final')}><span className="radio-dot" />No final</button>
+        </div>
+      </section>
     </>
   );
 }
@@ -450,7 +543,7 @@ function QuizPage({ quiz, current, index, selected, mode, answeredCount, onAnswe
   );
 }
 
-function ReviewPage({ quiz, selected, index, unansweredIndexes, onIndex, onBack, onFinish }) {
+function ReviewPage({ quiz, mode, selected, index, unansweredIndexes, onIndex, onBack, onFinish }) {
   const blanks = unansweredIndexes.length;
   return (
     <div className="solve-page review-page">
@@ -464,7 +557,7 @@ function ReviewPage({ quiz, selected, index, unansweredIndexes, onIndex, onBack,
       {blanks > 0 && (
         <section className="blank-list"><h3>Responda antes de concluir</h3>{unansweredIndexes.map((questionIndex) => <button key={quiz.questions[questionIndex].id} onClick={() => onIndex(questionIndex)}><span className="blank-number">{questionIndex + 1}</span><span><b>{quiz.questions[questionIndex].topic}</b><small>{quiz.questions[questionIndex].text}</small></span><ChevronRight size={17} /></button>)}</section>
       )}
-      {blanks === 0 && <section className="review-checklist"><h3>Resumo da tentativa</h3><p><CheckCircle2 size={16} />{quiz.questions.length} questões respondidas</p><p><Circle size={16} />Correção após finalizar</p></section>}
+      {blanks === 0 && <section className="review-checklist"><h3>Resumo da tentativa</h3><p><CheckCircle2 size={16} />{quiz.questions.length} questões respondidas</p><p><Circle size={16} />Correção {mode === 'immediate' ? 'mostrada a cada resposta' : 'após finalizar'}</p></section>}
       <QuestionDock questions={quiz.questions} selected={selected} index={index} onIndex={onIndex} onReview={onBack} onFinish={onFinish} answeredCount={quiz.questions.length - blanks} reviewMode />
     </div>
   );
@@ -488,6 +581,40 @@ function ConfirmDialog({ title, description, confirmText, onCancel, onConfirm, i
         <button className="dialog-close" onClick={onCancel} aria-label="Fechar"><X size={18} /></button>
         <span className="dialog-icon">{icon === 'exit' ? <ArrowLeft size={19} /> : <Trash2 size={19} />}</span><h2 id="dialog-title">{title}</h2><p id="dialog-description">{description}</p>
         <div className="dialog-actions"><button className="secondary-btn" onClick={onCancel}>Cancelar</button><button className="danger-btn" onClick={onConfirm}>{confirmText}</button></div>
+      </section>
+    </div>
+  );
+}
+
+function ResumeDraftDialog({ title, answered, total, onResume, onRestart, onCancel }) {
+  return (
+    <div className="dialog-backdrop" role="presentation">
+      <section className="confirm-dialog resume-dialog" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+        <span className="dialog-icon resume-icon"><RotateCcw size={20} /></span>
+        <h2 id="resume-title">Continuar simulado?</h2>
+        <p>Há um rascunho de <b>{title}</b> com {answered} de {total} questões respondidas.</p>
+        <div className="dialog-actions resume-actions">
+          <button className="secondary-btn" onClick={onCancel}>Agora não</button>
+          <button className="secondary-btn" onClick={onRestart}>Começar do zero</button>
+          <button className="primary-btn" onClick={onResume}>Continuar</button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function CorrectionDialog({ remember, onRemember, onChoose }) {
+  return (
+    <div className="dialog-backdrop" role="presentation">
+      <section className="confirm-dialog correction-dialog" role="dialog" aria-modal="true" aria-labelledby="correction-title">
+        <span className="dialog-icon correction-icon"><CheckCircle2 size={20} /></span>
+        <h2 id="correction-title">Quando mostrar a correção?</h2>
+        <p>Escolha como prefere ver o resultado das respostas neste simulado.</p>
+        <div className="correction-choices">
+          <button className="secondary-btn" onClick={() => onChoose('immediate')}><CheckCircle2 size={18} /><span><b>Na hora</b><small>Veja se acertou ao responder.</small></span></button>
+          <button className="secondary-btn" onClick={() => onChoose('final')}><FileText size={18} /><span><b>No final</b><small>Veja as respostas depois de concluir.</small></span></button>
+        </div>
+        <label className="remember-choice"><input type="checkbox" checked={remember} onChange={(event) => onRemember(event.target.checked)} /><span>Salvar como padrão e não perguntar novamente</span></label>
       </section>
     </div>
   );
