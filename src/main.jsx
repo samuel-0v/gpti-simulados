@@ -2,8 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowLeft, BarChart3, BookOpen, Check, CheckCircle2, ChevronLeft, ChevronRight,
-  Circle, CircleHelp, Clock3, Download, FileText, History, Minus, Plus,
-  RotateCcw, Trash2, X,
+  Circle, CircleHelp, Clock3, Download, FileText, History, Minus, Moon, Plus,
+  RotateCcw, Sun, Trash2, X,
 } from 'lucide-react';
 import quizzes from './quizzes.json';
 import './style.css';
@@ -47,6 +47,11 @@ function App() {
   const [draftPrompt, setDraftPrompt] = useState(null);
   const [correctionPrompt, setCorrectionPrompt] = useState(false);
   const [rememberCorrection, setRememberCorrection] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(() => localStorage.getItem('gpti-theme') === 'dark');
+
+  useEffect(() => {
+    localStorage.setItem('gpti-theme', darkTheme ? 'dark' : 'light');
+  }, [darkTheme]);
 
   useEffect(() => {
     try {
@@ -232,12 +237,13 @@ function App() {
   const isSolving = screen === 'quiz' || screen === 'review';
 
   return (
-    <div className={`app ${isSolving ? 'app-solving' : ''}`}>
+    <div className={`app ${isSolving ? 'app-solving' : ''} ${darkTheme ? 'theme-dark' : ''}`}>
+      {isSolving && <button className="theme-toggle solving-theme-toggle" onClick={() => setDarkTheme((value) => !value)} aria-label={darkTheme ? 'Ativar tema claro' : 'Ativar tema escuro'} title={darkTheme ? 'Tema claro' : 'Tema escuro'}>{darkTheme ? <Sun size={17} /> : <Moon size={17} />}</button>}
       {!isSolving && (
-        <AppHeader onHome={goHome} onHistory={() => setScreen('history')} attemptCount={saved.attempts.length} />
+        <AppHeader onHome={goHome} onHistory={() => setScreen('history')} attemptCount={saved.attempts.length} darkTheme={darkTheme} onToggleTheme={() => setDarkTheme((value) => !value)} />
       )}
       <div className={`layout ${isSolving ? 'layout-solving' : ''}`}>
-        {!isSolving && <Sidebar onTopic={startTopic} onExam={openExamSetup} onHistory={() => setScreen('history')} onStats={() => setScreen('stats')} />}
+        {!isSolving && <Sidebar onTopic={startTopic} onExam={openExamSetup} onHistory={() => setScreen('history')} onStats={() => setScreen('stats')} activeSection={screen} />}
         <main className={isSolving ? 'main-solving' : ''}>
           {screen === 'home' && (
             <HomePage
@@ -360,7 +366,7 @@ function App() {
   );
 }
 
-function AppHeader({ onHome, onHistory, attemptCount }) {
+function AppHeader({ onHome, onHistory, attemptCount, darkTheme, onToggleTheme }) {
   return (
     <header className="site-header">
       <button className="brand" onClick={onHome} aria-label="Ir para o início">
@@ -369,25 +375,27 @@ function AppHeader({ onHome, onHistory, attemptCount }) {
       </button>
       <div className="header-actions">
         <span className="saved-status"><span className="saved-dot"><Check size={11} /></span>Salvo neste navegador</span>
+        <button className="theme-toggle" onClick={onToggleTheme} aria-label={darkTheme ? 'Ativar tema claro' : 'Ativar tema escuro'} title={darkTheme ? 'Tema claro' : 'Tema escuro'}>{darkTheme ? <Sun size={17} /> : <Moon size={17} />}<span>{darkTheme ? 'Claro' : 'Escuro'}</span></button>
         <button className="header-history" onClick={onHistory}><History size={16} /><span>Histórico</span><span className="header-count">{attemptCount}</span></button>
       </div>
     </header>
   );
 }
 
-function Sidebar({ onTopic, onExam, onHistory, onStats }) {
+function Sidebar({ onTopic, onExam, onHistory, onStats, activeSection }) {
   return (
     <aside className="sidebar">
-      <div className="aside-title">SEUS SIMULADOS</div>
+      <div className="aside-title">CONTEÚDO</div>
       {quizzes.map((quiz, i) => (
         <button key={quiz.id} className="navitem" onClick={() => onTopic(i)}>
           <span className={`navicon tone-text-${i}`}><FileText size={17} /></span><span>{topicNames[i]}</span><span className="navcount">25</span>
         </button>
       ))}
       <div className="aside-rule" />
-      <button className="navitem exam-nav" onClick={onExam}><span className="navicon"><CircleHelp size={17} /></span><span>Simulado geral</span></button>
-      <button className="navitem history-nav" onClick={onHistory}><span className="navicon"><History size={17} /></span><span>Histórico</span></button>
-      <button className="navitem" onClick={onStats}><span className="navicon"><BarChart3 size={17} /></span><span>Estatísticas</span></button>
+      <div className="aside-title nav-group-title">REVISÃO</div>
+      <button className={`navitem exam-nav ${activeSection === 'examSetup' ? 'active' : ''}`} onClick={onExam}><span className="navicon"><CircleHelp size={17} /></span><span>Simulado geral</span></button>
+      <button className={`navitem history-nav ${activeSection === 'history' ? 'active' : ''}`} onClick={onHistory}><span className="navicon"><History size={17} /></span><span>Histórico</span></button>
+      <button className={`navitem ${activeSection === 'stats' ? 'active' : ''}`} onClick={onStats}><span className="navicon"><BarChart3 size={17} /></span><span>Estatísticas</span></button>
       <div className="aside-foot"><span className="avatar">G</span><span><b>Gerência de Projetos</b><small>Facom · UFU</small></span></div>
     </aside>
   );
@@ -397,11 +405,11 @@ function HomePage({ attempts, onTopic, onExam, onHistory, correctionPreference, 
   return (
     <>
       <section className="welcome">
-        <div><div className="welcome-mark"><BookOpen size={20} /></div><h1>Pronto para revisar?</h1><p>Escolha um simulado e avance questão por questão. Seu progresso fica guardado neste navegador.</p></div>
+        <div><div className="welcome-mark"><BookOpen size={20} /></div><span className="welcome-kicker">GERÊNCIA DE PROJETOS · CICLO DE APRENDIZADO</span><h1>Seu painel de revisão</h1><p>Pratique os conceitos, acompanhe seus erros recorrentes e consolide o que aprendeu.</p></div>
         <div className="welcome-stat"><span>QUESTÕES DISPONÍVEIS</span><b>125</b><small>em 5 temas</small></div>
       </section>
       <section className="section-head">
-        <div><h2>Escolha um simulado</h2><p>25 questões por tema · gabarito baseado no material enviado</p></div>
+        <div><h2>Trilhas de conhecimento</h2><p>Pratique por área de conhecimento e acompanhe seu desempenho.</p></div>
         <button className="text-button" onClick={onHistory}><History size={16} /> Histórico ({attempts.length})</button>
       </section>
       <div className="quiz-list">

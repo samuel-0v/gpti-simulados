@@ -12,6 +12,7 @@ A branch `main` está conectada ao Vercel; novos commits nela iniciam uma atuali
 - Simulado geral com 5 questões sorteadas por tema (25 no total).
 - Histórico de tentativas salvo no localStorage deste navegador.
 - Estatísticas por tema ou gerais, com questões mais erradas e revisão das respostas corretas.
+- Tema claro e escuro, com preferência salva neste navegador.
 - Exportação CSV da tentativa com questão, tema, resposta escolhida, resultado, gabarito e nota.
 
 ## Executar
