@@ -42,6 +42,7 @@ function App() {
   const [selected, setSelected] = useState({});
   const [examCounts, setExamCounts] = useState(topicNames.map(() => 5));
   const [clearDialog, setClearDialog] = useState(false);
+  const [deleteAttempt, setDeleteAttempt] = useState(null);
   const [exitDialog, setExitDialog] = useState(false);
   const [draftPrompt, setDraftPrompt] = useState(null);
   const [correctionPrompt, setCorrectionPrompt] = useState(false);
@@ -264,6 +265,7 @@ function App() {
               onClear={() => setClearDialog(true)}
               onExport={exportResult}
               onOpen={openSavedAttempt}
+              onDelete={(result) => setDeleteAttempt(result)}
             />
           )}
           {screen === 'quiz' && current && (
@@ -311,6 +313,18 @@ function App() {
           confirmText="Limpar histórico"
           onCancel={() => setClearDialog(false)}
           onConfirm={() => { setSaved((previous) => ({ ...previous, attempts: [] })); setClearDialog(false); }}
+        />
+      )}
+      {deleteAttempt && (
+        <ConfirmDialog
+          title="Excluir este resultado?"
+          description={`A tentativa de ${deleteAttempt.title} será removida do histórico.`}
+          confirmText="Excluir resultado"
+          onCancel={() => setDeleteAttempt(null)}
+          onConfirm={() => {
+            setSaved((previous) => ({ ...previous, attempts: previous.attempts.filter((item) => item.id !== deleteAttempt.id) }));
+            setDeleteAttempt(null);
+          }}
         />
       )}
       {exitDialog && (
@@ -426,7 +440,7 @@ function PageHeading({ back, label, title, description }) {
   );
 }
 
-function HistoryPage({ attempts, onBack, onClear, onExport, onOpen }) {
+function HistoryPage({ attempts, onBack, onClear, onExport, onOpen, onDelete }) {
   const [filter, setFilter] = useState('all');
   const visible = filter === 'all' ? attempts : attempts.filter((attempt) => attempt.answers.some((answer) => answer.question.topic === filter) || attempt.title.includes(filter));
   return (
@@ -455,6 +469,7 @@ function HistoryPage({ attempts, onBack, onClear, onExport, onOpen }) {
                 <ChevronRight size={17} className="row-arrow" />
               </button>
               <button className="history-export" onClick={() => onExport(attempt)}><Download size={15} />Exportar</button>
+              <button className="history-delete" aria-label={`Excluir resultado de ${attempt.title}`} title="Excluir resultado" onClick={() => onDelete(attempt)}><Trash2 size={15} /><span>Excluir</span></button>
             </article>
           ))}
         </div>

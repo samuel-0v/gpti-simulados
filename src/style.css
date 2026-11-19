@@ -136,3 +136,13 @@
   .correction-choices b{font-size:14px}
   .correction-choices small,.remember-choice{font-size:12px}
 }
+
+
+/* Histórico: ajuste para títulos longos e telas estreitas. */
+.history-card{min-width:0;flex-wrap:wrap}
+.history-card-main{min-width:0;flex:1 1 0}
+.history-detail{flex:1}
+.history-detail b{max-width:100%;overflow-wrap:anywhere}
+.history-delete{display:flex;align-items:center;gap:5px;border:1px solid #ecdada;border-radius:6px;background:#fff;color:#a14444;padding:8px;font-size:10px;white-space:nowrap}
+.history-delete:hover{background:#fff7f7}
+@media(max-width:699px){.history-card{gap:6px}.history-card-main{flex-basis:100%;width:100%}.history-export,.history-delete{flex:1;justify-content:center}}
