@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowLeft, BarChart3, BookOpen, Check, CheckCircle2, ChevronLeft, ChevronRight,
-  Circle, CircleHelp, Clock3, Download, FileText, History, Minus, Moon, Plus,
+  Circle, CircleHelp, Clock3, Download, FileText, History, Lightbulb, Minus, Moon, Plus,
   RotateCcw, Sun, Trash2, X,
 } from 'lucide-react';
 import quizzes from './quizzes.json';
@@ -609,6 +609,8 @@ function QuestionDock({ questions, selected, index, onIndex, onReview, onFinish,
 }
 
 function QuizPage({ quiz, current, index, selected, mode, answeredCount, onAnswer, onMode, onIndex, onReview, onExit }) {
+  const [hintVisible, setHintVisible] = useState(false);
+  useEffect(() => setHintVisible(false), [current.id]);
   const answerKey = current.answer.toUpperCase();
   return (
     <div className="solve-page">
@@ -617,6 +619,14 @@ function QuizPage({ quiz, current, index, selected, mode, answeredCount, onAnswe
       <article className="question-card">
         <div className="question-meta"><span>{current.topic}</span><span>{String(index + 1).padStart(2, '0')} / {quiz.questions.length}</span></div>
         <h2>{current.text}</h2>
+        {current.hint && (
+          <div className="question-hint">
+            <button className="hint-toggle" aria-expanded={hintVisible} aria-controls={`hint-${current.id}`} onClick={() => setHintVisible((visible) => !visible)}>
+              <Lightbulb size={16} />{hintVisible ? 'Ocultar dica' : 'Ver dica'}
+            </button>
+            {hintVisible && <p id={`hint-${current.id}`}>{current.hint}</p>}
+          </div>
+        )}
         <div className="options">
           {current.options.map((option) => {
             const isSelected = selected[current.id] === option.key;

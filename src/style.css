@@ -273,3 +273,14 @@
 
 .solving-theme-toggle{position:fixed;z-index:12;right:14px;top:12px}
 @media(max-width:699px){.solving-theme-toggle{right:10px;top:8px}}
+
+
+/* Dica contextual da questão */
+.question-hint{margin:0 0 13px;border:1px solid #d8e5ee;border-radius:8px;background:#f2f7fa;overflow:hidden}
+.hint-toggle{display:flex;align-items:center;gap:7px;padding:9px 10px;border:0;background:transparent;color:#28657d;font-size:11px;font-weight:700}
+.hint-toggle:hover{color:#173e63}
+.question-hint p{margin:0;padding:0 11px 11px 33px;color:#526a7b;font-size:11px;line-height:1.5}
+.theme-dark .question-hint{background:#1b3342;border-color:#345565}
+.theme-dark .hint-toggle{color:#8fd0d7}
+.theme-dark .hint-toggle:hover{color:#c0edf0}
+.theme-dark .question-hint p{color:#c0cfdd}

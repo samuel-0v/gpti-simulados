@@ -29,7 +29,8 @@
             "text": "Controlar apenas os custos indiretos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Distinga o objetivo de controlar o orçamento aprovado da ideia de cortar custos a qualquer preço."
       },
       {
         "id": "1-2",
@@ -57,7 +58,8 @@
             "text": "Analisar o valor agregado"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Considere a sequência lógica: primeiro se define o método de gestão, depois se estima e consolida."
       },
       {
         "id": "1-3",
@@ -85,7 +87,8 @@
             "text": "Registro de riscos"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Procure o documento que orienta como os custos serão planejados, estruturados e controlados."
       },
       {
         "id": "1-4",
@@ -113,7 +116,8 @@
             "text": "Criar o termo de abertura."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Estimar é prever recursos financeiros necessários; ainda não é consolidar o orçamento."
       },
       {
         "id": "1-5",
@@ -141,7 +145,8 @@
             "text": "Plano de comunicação."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Este processo reúne estimativas para formar uma referência aprovada de desempenho."
       },
       {
         "id": "1-6",
@@ -169,7 +174,8 @@
             "text": "Desenvolver a EAP"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Identifique qual processo acompanha os custos reais e trata desvios durante a execução."
       },
       {
         "id": "1-7",
@@ -197,7 +203,8 @@
             "text": "Estabelecer critérios de qualidade."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "A linha de base serve como referência de comparação do desempenho, não como cadastro de riscos."
       },
       {
         "id": "1-8",
@@ -225,7 +232,8 @@
             "text": "Dados não históricos."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Compare a estimativa com resultados de projetos anteriores que sejam parecidos."
       },
       {
         "id": "1-9",
@@ -253,7 +261,8 @@
             "text": "Matriz SWOT."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Procure uma estimativa baseada numa relação mensurável entre unidades e dados históricos."
       },
       {
         "id": "1-10",
@@ -281,7 +290,8 @@
             "text": "Não exigir EAP."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Imagine detalhar custos desde os pacotes menores da estrutura do projeto e depois somá-los."
       },
       {
         "id": "1-11",
@@ -309,7 +319,8 @@
             "text": "Substituir o controle de mudanças."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Essa reserva trata respostas a ameaças conhecidas que foram identificadas e analisadas."
       },
       {
         "id": "1-12",
@@ -337,7 +348,8 @@
             "text": "Pagamentos a fornecedores."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Separe riscos já identificados das incertezas que ainda não foram reconhecidas."
       },
       {
         "id": "1-13",
@@ -365,7 +377,8 @@
             "text": "Escopo, comunicação e risco"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Valor agregado combina o trabalho entregue com duas dimensões de desempenho do projeto."
       },
       {
         "id": "1-14",
@@ -393,7 +406,8 @@
             "text": "BAC / EV"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "O CPI compara o valor do trabalho realizado com o dinheiro efetivamente gasto."
       },
       {
         "id": "1-15",
@@ -421,7 +435,8 @@
             "text": "Não há variação de custos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Use 1 como referência de eficiência: abaixo disso, o valor obtido é menor que o gasto."
       },
       {
         "id": "1-16",
@@ -449,7 +464,8 @@
             "text": "Produtividade da equipe."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "O SPI compara o progresso obtido com o progresso que estava planejado."
       },
       {
         "id": "1-17",
@@ -477,7 +493,8 @@
             "text": "BAC – EV"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Na variação de custos, compare o valor do trabalho realizado com o custo real."
       },
       {
         "id": "1-18",
@@ -505,7 +522,8 @@
             "text": "Sem variação."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Compare o valor do trabalho realizado com o que saiu do caixa; qual ficou maior?"
       },
       {
         "id": "1-19",
@@ -533,7 +551,8 @@
             "text": "A reserva gerencial."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "BAC é uma referência global do orçamento, e não um valor medido até a data."
       },
       {
         "id": "1-20",
@@ -561,7 +580,8 @@
             "text": "A reserva de contingência."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "EAC é uma previsão do custo total ao término, considerando o cenário atual."
       },
       {
         "id": "1-21",
@@ -589,7 +609,8 @@
             "text": "Matriz RACI"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Procure a referência aprovada que serve para comparar custos planejados e desempenho."
       },
       {
         "id": "1-22",
@@ -617,7 +638,8 @@
             "text": "Termo de encerramento"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Desvios no controle podem exigir que o plano seja revisto por meio de uma solicitação formal."
       },
       {
         "id": "1-23",
@@ -645,7 +667,8 @@
             "text": "Estimar riscos qualitativos."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Observe a evolução do desempenho ao longo do tempo para projetar uma tendência futura."
       },
       {
         "id": "1-24",
@@ -673,7 +696,8 @@
             "text": "Custos compartilhados entre vários projetos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Custos diretos podem ser ligados de maneira identificável ao trabalho do projeto."
       },
       {
         "id": "1-25",
@@ -701,7 +725,8 @@
             "text": "Com baixa qualidade."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "SPI acima de 1 significa que o valor realizado supera o valor planejado até o momento."
       }
     ]
   },
@@ -735,7 +760,8 @@
             "text": "Cancelar riscos que não podem ser mitigados."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "O foco é definir a abordagem e as regras do trabalho de riscos, antes de identificar riscos específicos."
       },
       {
         "id": "2-2",
@@ -763,7 +789,8 @@
             "text": "Método do Valor Agregado"
           }
         ],
-        "answer": "e"
+        "answer": "e",
+        "hint": "Quatro opções ajudam a descobrir riscos; uma mede desempenho de prazo e custo."
       },
       {
         "id": "2-3",
@@ -791,7 +818,8 @@
             "text": "É usado apenas na fase de encerramento do projeto."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "O registro reúne riscos específicos, características e respostas; política organizacional é outro artefato."
       },
       {
         "id": "2-4",
@@ -819,7 +847,8 @@
             "text": "Aproveitar"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Para ameaça, pense em passar a responsabilidade financeira ou operacional a outra parte."
       },
       {
         "id": "2-5",
@@ -847,7 +876,8 @@
             "text": "Aceitar passivamente"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Para oportunidade, procure uma resposta que tente garantir que o benefício aconteça."
       },
       {
         "id": "2-6",
@@ -875,7 +905,8 @@
             "text": "Elaborar o plano de gerenciamento de custos."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "A análise qualitativa classifica e prioriza; não calcula necessariamente valores monetários."
       },
       {
         "id": "2-7",
@@ -903,7 +934,8 @@
             "text": "Planejamento do escopo."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Simulações repetidas de cenários com variáveis incertas pertencem ao lado quantitativo."
       },
       {
         "id": "2-8",
@@ -931,7 +963,8 @@
             "text": "Evitação"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Reduzir chance ou impacto de uma ameaça é diferente de transferi-la ou eliminá-la."
       },
       {
         "id": "2-9",
@@ -959,7 +992,8 @@
             "text": "Comunicar apenas no encerramento do projeto."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Quando o evento ocorre, consulte o plano que foi preparado para aquela situação."
       },
       {
         "id": "2-10",
@@ -987,7 +1021,8 @@
             "text": "Estrutura analítica do projeto (EAP)."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Respostas planejadas podem atualizar artefatos e o plano geral que guia o projeto."
       },
       {
         "id": "2-11",
@@ -1015,7 +1050,8 @@
             "text": "Qualquer evento que atrase o cronograma."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Um risco ainda é incerto e pode afetar os objetivos tanto para melhor quanto para pior."
       },
       {
         "id": "2-12",
@@ -1043,7 +1079,8 @@
             "text": "Aprovação do termo de abertura."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Monitorar acompanha riscos e respostas, inclusive efeitos que permanecem depois da ação."
       },
       {
         "id": "2-13",
@@ -1071,7 +1108,8 @@
             "text": "Exploração"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Aceitar é reconhecer que o risco continua e escolher não evitá-lo nem transferi-lo."
       },
       {
         "id": "2-14",
@@ -1099,7 +1137,8 @@
             "text": "Planejar gerenciamento dos riscos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "A matriz combina chance e consequência para classificar prioridade qualitativa."
       },
       {
         "id": "2-15",
@@ -1127,7 +1166,8 @@
             "text": "Benchmarking"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Para consenso anônimo entre especialistas, pense em rodadas de opiniões consolidadas."
       },
       {
         "id": "2-16",
@@ -1155,7 +1195,8 @@
             "text": "Risco crítico"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "É o risco que continua existindo mesmo depois da resposta aplicada."
       },
       {
         "id": "2-17",
@@ -1183,7 +1224,8 @@
             "text": "Risco controlado"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Considere o novo risco criado pela própria ação escolhida para tratar outro risco."
       },
       {
         "id": "2-18",
@@ -1211,7 +1253,8 @@
             "text": "Registro de lições aprendidas"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Monte vários cenários possíveis para avaliar o efeito combinado de incertezas."
       },
       {
         "id": "2-19",
@@ -1239,7 +1282,8 @@
             "text": "Custos indiretos"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Compartilhar é uma estratégia usada para aproveitar uma oportunidade junto com outra parte."
       },
       {
         "id": "2-20",
@@ -1267,7 +1311,8 @@
             "text": "A metodologia usada para análise quantitativa."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Apetite representa quanto risco a organização aceita assumir em busca de seus objetivos."
       },
       {
         "id": "2-21",
@@ -1295,7 +1340,8 @@
             "text": "Registro de premissas"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Procure o artefato operacional que registra riscos individuais e as respostas associadas."
       },
       {
         "id": "2-22",
@@ -1323,7 +1369,8 @@
             "text": "Deixar a decisão para o patrocinador."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Baixa chance não anula a consequência: considere os dois fatores antes de priorizar."
       },
       {
         "id": "2-23",
@@ -1351,7 +1398,8 @@
             "text": "Ser aplicadas apenas no encerramento."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Uma premissa que não se confirma pode gerar incerteza e afetar objetivos do projeto."
       },
       {
         "id": "2-24",
@@ -1379,7 +1427,8 @@
             "text": "Planejar as respostas aos riscos"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Uma alternativa pertence a outra área de conhecimento, não à lista de processos de riscos."
       },
       {
         "id": "2-25",
@@ -1407,7 +1456,8 @@
             "text": "Exploração"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Seguro transfere parte da consequência financeira para uma entidade externa."
       }
     ]
   },
@@ -1441,7 +1491,8 @@
             "text": "Substituir o plano de gerenciamento do projeto."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Considere o ciclo completo da informação: produzir, compartilhar, guardar e recuperar."
       },
       {
         "id": "3-2",
@@ -1469,7 +1520,8 @@
             "text": "Desenvolver o cronograma"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "O plano é criado na etapa de planejamento, antes da distribuição das informações."
       },
       {
         "id": "3-3",
@@ -1497,7 +1549,8 @@
             "text": "30"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Use a fórmula de canais entre pares: n × (n − 1) ÷ 2."
       },
       {
         "id": "3-4",
@@ -1525,7 +1578,8 @@
             "text": "Plano de gerenciamento do cronograma"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Procure o artefato que documenta público, frequência, formato e responsáveis pelas mensagens."
       },
       {
         "id": "3-5",
@@ -1553,7 +1607,8 @@
             "text": "Garantir que a comunicação ocorra somente no encerramento."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Gerenciar é colocar em prática o que foi planejado para a comunicação do projeto."
       },
       {
         "id": "3-6",
@@ -1581,7 +1636,8 @@
             "text": "Aprovar o orçamento do projeto."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Monitorar verifica se as necessidades de informação dos públicos estão sendo atendidas."
       },
       {
         "id": "3-7",
@@ -1609,7 +1665,8 @@
             "text": "Relatório de desempenho"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Planejar comunicações depende de entender quem são os públicos e o que precisam saber."
       },
       {
         "id": "3-8",
@@ -1637,7 +1694,8 @@
             "text": "Apenas uso de sistemas eletrônicos."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Interativa envolve troca nos dois sentidos, com retorno entre os participantes."
       },
       {
         "id": "3-9",
@@ -1665,7 +1723,8 @@
             "text": "Conversa telefônica"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Push significa enviar a informação diretamente ao destinatário."
       },
       {
         "id": "3-10",
@@ -1693,7 +1752,8 @@
             "text": "Comunicação ascendente"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Pull significa que a pessoa consulta a informação quando precisa."
       },
       {
         "id": "3-11",
@@ -1721,7 +1781,8 @@
             "text": "Análise Monte Carlo"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Em contextos culturais distintos, ajuste linguagem e escuta ao público."
       },
       {
         "id": "3-12",
@@ -1749,7 +1810,8 @@
             "text": "Comunicação interativa verbal"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Classifique separadamente o meio (escrito/verbal) e o grau de formalidade."
       },
       {
         "id": "3-13",
@@ -1777,7 +1839,8 @@
             "text": "O orçamento de comunicação."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "O plano define destinatários, momento, método e formato das informações."
       },
       {
         "id": "3-14",
@@ -1805,7 +1868,8 @@
             "text": "Push e verbal"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Um relatório padronizado enviado periodicamente é documentado e segue formalidade."
       },
       {
         "id": "3-15",
@@ -1833,7 +1897,8 @@
             "text": "A ausência de reuniões presenciais."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Ruído é qualquer interferência que distorce o envio ou o entendimento da mensagem."
       },
       {
         "id": "3-16",
@@ -1861,7 +1926,8 @@
             "text": "Comunicação descendente"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Em uma reunião, participantes respondem e ajustam a conversa em tempo real."
       },
       {
         "id": "3-17",
@@ -1889,7 +1955,8 @@
             "text": "As restrições de cronograma."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "A comunicação deve considerar o que cada parte interessada precisa e espera."
       },
       {
         "id": "3-18",
@@ -1917,7 +1984,8 @@
             "text": "Curva S"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Procure a ferramenta que organiza mensagens, públicos, canais e periodicidade."
       },
       {
         "id": "3-19",
@@ -1945,7 +2013,8 @@
             "text": "Criar as atas de reunião."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Gerenciar comunicações é executar a distribuição e garantir que ela siga o combinado."
       },
       {
         "id": "3-20",
@@ -1973,7 +2042,8 @@
             "text": "Exclusiva para a equipe de projetos."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Boa comunicação se ajusta ao público e privilegia clareza em vez de excesso de detalhe."
       },
       {
         "id": "3-21",
@@ -2001,7 +2071,8 @@
             "text": "Nenhuma das alternativas"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Compare a lista com os três processos da área; um item pertence ao gerenciamento do escopo."
       },
       {
         "id": "3-22",
@@ -2029,7 +2100,8 @@
             "text": "Comunicação informal por canais paralelos."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Descendente descreve a direção da informação na hierarquia organizacional."
       },
       {
         "id": "3-23",
@@ -2057,7 +2129,8 @@
             "text": "Comunicação informal escrita"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Acesso sob demanda é diferente de envio direto e também de conversa em tempo real."
       },
       {
         "id": "3-24",
@@ -2085,7 +2158,8 @@
             "text": "Registro das premissas"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Relatórios de desempenho informam resultados e situação durante a execução do projeto."
       },
       {
         "id": "3-25",
@@ -2113,7 +2187,8 @@
             "text": "Falta de análise de Monte Carlo."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Enviar relatórios não garante que a mensagem tenha sido recebida, compreendida e útil."
       }
     ]
   },
@@ -2147,7 +2222,8 @@
             "text": "Criar relatórios de desempenho semanais."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Qualidade trata de atender à finalidade e aos requisitos, não apenas prazo ou custo."
       },
       {
         "id": "4-2",
@@ -2175,7 +2251,8 @@
             "text": "Registro de premissas."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Planejar resulta no documento que descreve como a qualidade será gerenciada."
       },
       {
         "id": "4-3",
@@ -2203,7 +2280,8 @@
             "text": "Criar a EAP do projeto."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Auditoria avalia processos e conformidade; inspeção de entregas é foco de controle."
       },
       {
         "id": "4-4",
@@ -2231,7 +2309,8 @@
             "text": "Gerenciar comunicações com fornecedores."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Controlar registra resultados e os compara aos critérios definidos para detectar desvios."
       },
       {
         "id": "4-5",
@@ -2259,7 +2338,8 @@
             "text": "Desenvolver o cronograma"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Checklist é uma forma de verificar características observáveis de uma entrega."
       },
       {
         "id": "4-6",
@@ -2287,7 +2367,8 @@
             "text": "Custos de aquisição e operação."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "A qualidade envolve prevenir problemas e lidar com falhas; pense em conformidade versus falha."
       },
       {
         "id": "4-7",
@@ -2315,7 +2396,8 @@
             "text": "Testes preventivos de software."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Retrabalho surge quando algo precisa ser corrigido após não atender aos requisitos."
       },
       {
         "id": "4-8",
@@ -2343,7 +2425,8 @@
             "text": "Controle de mudanças no cronograma."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Garantia da qualidade é sistemática e preventiva, olhando processos e requisitos."
       },
       {
         "id": "4-9",
@@ -2371,7 +2454,8 @@
             "text": "Elaborar estimativas de custos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Ishikawa organiza possíveis causas para investigar a origem de um problema."
       },
       {
         "id": "4-10",
@@ -2399,7 +2483,8 @@
             "text": "Inspeções"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Uma alternativa é ferramenta de responsabilidades, não instrumento de análise/controle da qualidade."
       },
       {
         "id": "4-11",
@@ -2427,7 +2512,8 @@
             "text": "Curva S, Cronograma, Orçamento, EAP, Ishikawa, Checklist, Monte Carlo"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Reconheça o conjunto que reúne gráficos, listas e diagramas usados para analisar processos e defeitos."
       },
       {
         "id": "4-12",
@@ -2455,7 +2541,8 @@
             "text": "Criar o plano de recursos humanos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Pareto destaca poucos fatores que costumam responder por uma parcela grande dos efeitos."
       },
       {
         "id": "4-13",
@@ -2483,7 +2570,8 @@
             "text": "SWOT"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Melhoria contínua é um princípio japonês associado a pequenos aprimoramentos constantes."
       },
       {
         "id": "4-14",
@@ -2511,7 +2599,8 @@
             "text": "Controlar riscos residuais."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "PDCA organiza ciclos de planejar, executar, verificar e agir para melhorar."
       },
       {
         "id": "4-15",
@@ -2539,7 +2628,8 @@
             "text": "Gerenciamento de cronograma"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Benchmarking compara práticas com referências para apoiar definição e aprimoramento de padrões."
       },
       {
         "id": "4-16",
@@ -2567,7 +2657,8 @@
             "text": "Grau refere-se a custos de produção e qualidade à satisfação do cliente."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Grau descreve categoria ou conjunto de características; qualidade verifica conformidade com requisitos."
       },
       {
         "id": "4-17",
@@ -2595,7 +2686,8 @@
             "text": "Estrutura de custos fixos e variáveis."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Procure componentes que orientam medição e execução: métricas, papéis e ferramentas."
       },
       {
         "id": "4-18",
@@ -2623,7 +2715,8 @@
             "text": "Encerrar o projeto"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Auditorias avaliam se processos planejados são seguidos e se podem ser melhorados."
       },
       {
         "id": "4-19",
@@ -2651,7 +2744,8 @@
             "text": "Estimar recursos de atividades."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Um fluxograma mostra visualmente etapas e decisões de um processo."
       },
       {
         "id": "4-20",
@@ -2679,7 +2773,8 @@
             "text": "Mapear responsabilidades funcionais."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Um gráfico de controle acompanha uma medida ao longo de observações no tempo."
       },
       {
         "id": "4-21",
@@ -2707,7 +2802,8 @@
             "text": "Devolução de material defeituoso."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Conformidade inclui atividades preventivas, como capacitar antes de ocorrerem defeitos."
       },
       {
         "id": "4-22",
@@ -2735,7 +2831,8 @@
             "text": "Plano de recursos humanos"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Critérios de aceitação são condições definidas para verificar se a entrega atende ao combinado."
       },
       {
         "id": "4-23",
@@ -2763,7 +2860,8 @@
             "text": "Definir premissas."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Dispersão relaciona pares de medidas para observar se elas variam juntas."
       },
       {
         "id": "4-24",
@@ -2791,7 +2889,8 @@
             "text": "Controlar custos"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "As sete ferramentas são aplicadas para medir resultados e verificar conformidade das entregas."
       },
       {
         "id": "4-25",
@@ -2819,7 +2918,8 @@
             "text": "Termo de abertura"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Se o controle encontra não conformidade ou necessidade de ajuste, pode recomendar uma ação formal."
       }
     ]
   },
@@ -2853,7 +2953,8 @@
             "text": "Reduzir riscos do cronograma."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Considere que aquisições cobrem bens ou serviços obtidos de fora da equipe do projeto."
       },
       {
         "id": "5-2",
@@ -2881,7 +2982,8 @@
             "text": "Selecionar fornecedores"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Primeiro se define como comprar; depois vêm seleção, acompanhamento e encerramento."
       },
       {
         "id": "5-3",
@@ -2909,7 +3011,8 @@
             "text": "Plano de comunicação"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "O plano descreve a estratégia de compras, tipos de contrato e abordagem de fornecedores."
       },
       {
         "id": "5-4",
@@ -2937,7 +3040,8 @@
             "text": "O pagamento depende de horas trabalhadas."
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Preço fixo é mais previsível quando o trabalho e os resultados esperados estão claros."
       },
       {
         "id": "5-5",
@@ -2965,7 +3069,8 @@
             "text": "O fornecedor garante todos os resultados."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Em T&M, o pagamento acompanha as unidades de trabalho e materiais efetivamente utilizados."
       },
       {
         "id": "5-6",
@@ -2993,7 +3098,8 @@
             "text": "O cliente não quer transparência nos custos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Flexibilidade é útil quando o trabalho ainda tem incerteza e não pode ser fechado em detalhe."
       },
       {
         "id": "5-7",
@@ -3021,7 +3127,8 @@
             "text": "Preço fixo com incentivo (FPI)"
           }
         ],
-        "answer": "d"
+        "answer": "d",
+        "hint": "Compare os três grupos conhecidos de contrato e procure o rótulo que não é uma categoria padrão."
       },
       {
         "id": "5-8",
@@ -3049,7 +3156,8 @@
             "text": "Revisar o plano de comunicação."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Conduzir inclui receber, avaliar propostas e escolher fornecedor conforme critérios."
       },
       {
         "id": "5-9",
@@ -3077,7 +3185,8 @@
             "text": "Todos os anteriores"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "RFP solicita uma proposta de solução; diferencie de pedido de informação e de cotação simples."
       },
       {
         "id": "5-10",
@@ -3105,7 +3214,8 @@
             "text": "Encerrar formalmente o projeto."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Controlar acompanha execução contratual, desempenho e alterações durante o contrato."
       },
       {
         "id": "5-11",
@@ -3133,7 +3243,8 @@
             "text": "Área de comunicação"
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Quem administra o projeto coordena a relação contratual e acompanha o cumprimento das obrigações."
       },
       {
         "id": "5-12",
@@ -3161,7 +3272,8 @@
             "text": "Iniciar a análise de riscos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Encerrar confirma aceite e conclusão do trabalho contratado antes de fechar formalmente."
       },
       {
         "id": "5-13",
@@ -3189,7 +3301,8 @@
             "text": "Não há margem de negociação."
           }
         ],
-        "answer": "c"
+        "answer": "c",
+        "hint": "Incentivos podem recompensar metas acordadas de custo, prazo ou desempenho."
       },
       {
         "id": "5-14",
@@ -3217,7 +3330,8 @@
             "text": "Todas as anteriores"
           }
         ],
-        "answer": "e"
+        "answer": "e",
+        "hint": "Planejamento considera riscos, cronograma, stakeholders e também a referência que delimita o trabalho."
       },
       {
         "id": "5-15",
@@ -3245,7 +3359,8 @@
             "text": "O comprador não tem controle sobre custos."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "CPIF reembolsa custos elegíveis e ajusta incentivo conforme critérios de desempenho."
       },
       {
         "id": "5-16",
@@ -3273,7 +3388,8 @@
             "text": "Definir as necessidades de comunicação."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Make-or-buy compara capacidade/custo interno com a alternativa de contratar externamente."
       },
       {
         "id": "5-17",
@@ -3301,7 +3417,8 @@
             "text": "Registro de riscos"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Procure a cláusula que define consequência financeira quando há atraso contratual."
       },
       {
         "id": "5-18",
@@ -3329,7 +3446,8 @@
             "text": "Fluxograma"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Compare fornecedores com critérios ponderados, não apenas uma impressão subjetiva."
       },
       {
         "id": "5-19",
@@ -3357,7 +3475,8 @@
             "text": "Encerramento"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Planejar as aquisições pertence ao grupo que prepara as decisões e documentos antes da execução."
       },
       {
         "id": "5-20",
@@ -3385,7 +3504,8 @@
             "text": "Prestador de serviço"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Buyer é a parte que compra e contrata, em oposição a quem vende ou presta o serviço."
       },
       {
         "id": "5-21",
@@ -3413,7 +3533,8 @@
             "text": "O escritório de projetos (PMO)"
           }
         ],
-        "answer": "a"
+        "answer": "a",
+        "hint": "Se horas e materiais aumentam, quem normalmente paga os custos adicionais do contrato?"
       },
       {
         "id": "5-22",
@@ -3441,7 +3562,8 @@
             "text": "Revisar a comunicação interna."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Auditoria de aquisições olha para o aprendizado e o desempenho do processo de compra."
       },
       {
         "id": "5-23",
@@ -3469,7 +3591,8 @@
             "text": "O comprador paga valor fixo total, sem flexibilidade."
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "CPFF combina reembolso de custos com taxa de remuneração que não varia com o desempenho."
       },
       {
         "id": "5-24",
@@ -3497,7 +3620,8 @@
             "text": "Relatórios de comunicação"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Encerramento formal documenta que o contrato foi concluído e fechado."
       },
       {
         "id": "5-25",
@@ -3525,7 +3649,8 @@
             "text": "Estrutura analítica do projeto"
           }
         ],
-        "answer": "b"
+        "answer": "b",
+        "hint": "Dar pesos diferentes a preço e qualidade é avaliar alternativas por múltiplos critérios."
       }
     ]
   }
