@@ -115,14 +115,19 @@ function App() {
 
   const startFresh = () => {
     if (!draftPrompt) return;
-    const { title, id, questions } = draftPrompt.fresh;
+    const freshQuiz = draftPrompt.fresh;
+    const draftId = draftPrompt.draft.quiz.id;
     setSaved((previous) => {
       const drafts = { ...previous.drafts };
-      delete drafts[id];
+      delete drafts[draftId];
       return { ...previous, drafts };
     });
     setDraftPrompt(null);
-    begin(title, id, questions, saved.correctionPreference || 'immediate');
+    if (!freshQuiz) {
+      setScreen('examSetup');
+      return;
+    }
+    begin(freshQuiz.title, freshQuiz.id, freshQuiz.questions, saved.correctionPreference || 'immediate');
   };
 
   const chooseCorrection = (chosenMode, remember = rememberCorrection) => {
@@ -141,6 +146,15 @@ function App() {
       topic: topicNames[quizIndex],
     }));
     openQuiz(quizzes[quizIndex].title, quizzes[quizIndex].id, questionSet);
+  };
+
+  const openExamSetup = () => {
+    const draft = saved.drafts?.exam;
+    if (draft) {
+      setDraftPrompt({ draft, fresh: null, beforeExamSetup: true });
+      return;
+    }
+    setScreen('examSetup');
   };
 
   const startExam = () => {
@@ -222,13 +236,13 @@ function App() {
         <AppHeader onHome={goHome} onHistory={() => setScreen('history')} attemptCount={saved.attempts.length} />
       )}
       <div className={`layout ${isSolving ? 'layout-solving' : ''}`}>
-        {!isSolving && <Sidebar onTopic={startTopic} onExam={() => setScreen('examSetup')} onHistory={() => setScreen('history')} />}
+        {!isSolving && <Sidebar onTopic={startTopic} onExam={openExamSetup} onHistory={() => setScreen('history')} />}
         <main className={isSolving ? 'main-solving' : ''}>
           {screen === 'home' && (
             <HomePage
               attempts={saved.attempts}
               onTopic={startTopic}
-              onExam={() => setScreen('examSetup')}
+              onExam={openExamSetup}
               onHistory={() => setScreen('history')}
               correctionPreference={saved.correctionPreference}
               onCorrectionPreference={updateCorrectionPreference}
@@ -311,7 +325,8 @@ function App() {
       )}
       {draftPrompt && (
         <ResumeDraftDialog
-          title={draftPrompt.fresh.title}
+          title={draftPrompt.fresh?.title || 'Simulado geral'}
+          beforeExamSetup={draftPrompt.beforeExamSetup}
           answered={Object.keys(draftPrompt.draft.selected || {}).length}
           total={draftPrompt.draft.quiz.questions.length}
           onResume={resumeDraft}
@@ -472,13 +487,13 @@ function ExamSetup({ counts, total, onChange, onBack, onStart }) {
   );
 }
 
-function SolvingHeader({ quiz, current, index, total, onExit }) {
-  const percent = Math.round(((index + 1) / total) * 100);
+function SolvingHeader({ quiz, current, index, total, answeredCount, onExit }) {
+  const percent = Math.round((answeredCount / total) * 100);
   return (
     <div className="solving-header">
       <button className="solving-exit" onClick={onExit}><ChevronLeft size={18} /><span>Sair do simulado</span></button>
       <div className="solving-title-row"><div><h1>{quiz.id === 'exam' ? quiz.title : `Simulado — ${current.topic}`}</h1><p>{current.topic}</p></div><span className="solving-clock"><Clock3 size={14} />{percent}%</span></div>
-      <div className="solving-progress"><div><b>Questão {index + 1} <span>de {total}</span></b><span>{percent}%</span></div><div className="track"><i style={{ width: `${percent}%` }} /></div></div>
+      <div className="solving-progress"><div><b>{answeredCount} respondidas <span>de {total}</span></b><span>{percent}%</span></div><div className="track"><i style={{ width: `${percent}%` }} /></div></div>
     </div>
   );
 }
@@ -500,7 +515,9 @@ function QuestionDock({ questions, selected, index, onIndex, onReview, onFinish,
           <button className="primary-btn" onClick={onFinish}><span>Finalizar simulado</span><Check size={17} /></button>
         </> : <>
           <button className="secondary-btn" onClick={() => onIndex(Math.max(0, index - 1))} disabled={index === 0}><ChevronLeft size={16} /><span>Anterior</span></button>
-          {index < questions.length - 1
+          {answeredCount === questions.length
+            ? <button className="primary-btn" onClick={onReview}><span>Revisar respostas</span><Check size={17} /></button>
+            : index < questions.length - 1
             ? <button className="primary-btn" onClick={() => onIndex(index + 1)}><span>Próxima</span><ChevronRight size={17} /></button>
             : <button className="primary-btn" onClick={onReview}><span>Revisar respostas</span><Check size={17} /></button>}
         </>}
@@ -513,7 +530,7 @@ function QuizPage({ quiz, current, index, selected, mode, answeredCount, onAnswe
   const answerKey = current.answer.toUpperCase();
   return (
     <div className="solve-page">
-      <SolvingHeader quiz={quiz} current={current} index={index} total={quiz.questions.length} onExit={onExit} />
+      <SolvingHeader quiz={quiz} current={current} index={index} total={quiz.questions.length} answeredCount={answeredCount} onExit={onExit} />
       <div className="solve-mode"><span>Correção</span><button className={mode === 'immediate' ? 'mode active' : 'mode'} onClick={() => onMode('immediate')}><span className="radio-dot" />Na hora</button><button className={mode === 'final' ? 'mode active' : 'mode'} onClick={() => onMode('final')}><span className="radio-dot" />No final</button></div>
       <article className="question-card">
         <div className="question-meta"><span>{current.topic}</span><span>{String(index + 1).padStart(2, '0')} / {quiz.questions.length}</span></div>
@@ -586,16 +603,18 @@ function ConfirmDialog({ title, description, confirmText, onCancel, onConfirm, i
   );
 }
 
-function ResumeDraftDialog({ title, answered, total, onResume, onRestart, onCancel }) {
+function ResumeDraftDialog({ title, answered, total, beforeExamSetup = false, onResume, onRestart, onCancel }) {
   return (
     <div className="dialog-backdrop" role="presentation">
       <section className="confirm-dialog resume-dialog" role="dialog" aria-modal="true" aria-labelledby="resume-title">
         <span className="dialog-icon resume-icon"><RotateCcw size={20} /></span>
-        <h2 id="resume-title">Continuar simulado?</h2>
-        <p>Há um rascunho de <b>{title}</b> com {answered} de {total} questões respondidas.</p>
+        <h2 id="resume-title">{beforeExamSetup ? 'Simulado geral em andamento' : 'Continuar simulado?'}</h2>
+        <p>{beforeExamSetup
+          ? `Há um rascunho do simulado geral com ${answered} de ${total} questões respondidas. Você pode continuar ou configurar uma nova prova.`
+          : <>Há um rascunho de <b>{title}</b> com {answered} de {total} questões respondidas.</>}</p>
         <div className="dialog-actions resume-actions">
           <button className="secondary-btn" onClick={onCancel}>Agora não</button>
-          <button className="secondary-btn" onClick={onRestart}>Começar do zero</button>
+          <button className="secondary-btn" onClick={onRestart}>{beforeExamSetup ? 'Configurar do zero' : 'Começar do zero'}</button>
           <button className="primary-btn" onClick={onResume}>Continuar</button>
         </div>
       </section>
